@@ -56,7 +56,7 @@ class S extends Component {
       </div>
     ) : (
       <h1>
-        This secret doesn't exist anymore
+        This secret does not exist anymore
         <style jsx>{`
           h1 {
             color: ${colors.white};
