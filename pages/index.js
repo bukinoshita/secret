@@ -46,7 +46,7 @@ class Home extends Component {
 
     return (
       <Page>
-        <form onClick={this.onSubmit}>
+        <form onSubmit={this.onSubmit}>
           <textarea
             placeholder="Your secret..."
             name="message"
