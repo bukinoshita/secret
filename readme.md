@@ -9,7 +9,7 @@ send a message through a safe, private, and encrypted link that automatically ex
 
 ## Quick Start
 
-To check it live, go to [secret](https://secret.now.sh).
+To check it live, go to [secret](https://getsecret.now.sh).
 
 OR
 
