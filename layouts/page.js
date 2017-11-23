@@ -100,6 +100,12 @@ const Page = ({ children }) => {
           <footer>
             <ul>
               <li>
+                <Link prefetch href="/">
+                  <span>create secret</span>
+                </Link>
+              </li>
+
+              <li>
                 <Link prefetch href="/about">
                   <span>About</span>
                 </Link>
