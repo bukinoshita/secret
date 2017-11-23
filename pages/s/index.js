@@ -36,7 +36,8 @@ class S extends Component {
       passphrase: '',
       message: '',
       fetched: false,
-      sFetched: false
+      sFetched: false,
+      fetching: false
     }
   }
 
@@ -63,17 +64,21 @@ class S extends Component {
     const { id } = this.props.url.query
     const { passphrase } = this.state
 
+    this.setState({ fetching: true })
+
     return api
       .get(`/secret/${id}?passphrase=${passphrase}`)
       .then(res => {
         const message = res.secret.message
-        this.setState({ message, sFetched: true })
+        this.setState({ message, sFetched: true, fetching: false })
       })
-      .catch(() => this.setState({ sFetched: true, passphrase: '' }))
+      .catch(() =>
+        this.setState({ sFetched: true, passphrase: '', fetching: false })
+      )
   }
 
   render() {
-    const { hasPassphrase, passphrase, message, fetched } = this.state
+    const { hasPassphrase, passphrase, message, fetched, fetching } = this.state
 
     const styles = this.state.sFetched ? { borderColor: 'red' } : null
 
@@ -91,7 +96,9 @@ class S extends Component {
             autoFocus={true}
           />
           <div>
-            <button type="submit">Reveal the secret</button>
+            <button type="submit" disabled={fetching}>
+              Reveal the secret
+            </button>
           </div>
         </form>
         <style jsx>{`
@@ -158,6 +165,11 @@ class S extends Component {
           button:focus,
           button:hover {
             box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+          }
+
+          button[disabled] {
+            background-color: ${colors.gray};
+            cursor: default;
           }
         `}</style>
       </div>

@@ -17,7 +17,12 @@ class Home extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.addPassphrase = this.addPassphrase.bind(this)
 
-    this.state = { message: '', hasPassphrase: false, passphrase: '' }
+    this.state = {
+      message: '',
+      hasPassphrase: false,
+      passphrase: '',
+      requesting: false
+    }
   }
 
   onInputChange(event) {
@@ -29,6 +34,7 @@ class Home extends Component {
 
   onSubmit(event) {
     event.preventDefault()
+    this.setState({ requesting: true })
 
     const { message, passphrase } = this.state
 
@@ -36,6 +42,7 @@ class Home extends Component {
       return api
         .post('/secret', { message, passphrase })
         .then(({ uid }) => {
+          this.setState({ requesting: false })
           Router.push(`/secret?uid=${uid}`)
         })
         .catch(err => console.log(err))
@@ -47,7 +54,7 @@ class Home extends Component {
   }
 
   render() {
-    const { message, hasPassphrase, passphrase } = this.state
+    const { message, hasPassphrase, passphrase, requesting } = this.state
 
     const passphraseInput = hasPassphrase ? (
       <fieldset>
@@ -135,7 +142,9 @@ class Home extends Component {
 
           {passphraseInput}
 
-          <button type="submit">Create</button>
+          <button type="submit" disabled={requesting}>
+            Create
+          </button>
         </form>
 
         <style jsx>{`
@@ -199,8 +208,14 @@ class Home extends Component {
             transition: all 200ms;
           }
 
-          button:focus {
+          button:focus,
+          button:hover {
             box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+          }
+
+          button[disabled] {
+            background-color: ${colors.gray};
+            cursor: default;
           }
 
           @media ${phone} {
