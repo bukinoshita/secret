@@ -3,11 +3,13 @@
 import React, { Component } from 'react'
 import Router from 'next/router'
 
-import api from './../services/api'
-
 import Page from './../layouts/page'
 
+import Button from './../components/button'
+
 import { colors, typography, phone } from './../theme'
+
+import api from './../services/api'
 
 class Home extends Component {
   constructor() {
@@ -45,8 +47,13 @@ class Home extends Component {
           this.setState({ requesting: false })
           Router.push(`/secret?uid=${uid}`)
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          this.setState({ requesting: false })
+          console.log(err)
+        })
     }
+
+    this.setState({ requesting: false })
   }
 
   addPassphrase() {
@@ -55,7 +62,6 @@ class Home extends Component {
 
   render() {
     const { message, hasPassphrase, passphrase, requesting } = this.state
-
     const passphraseInput = hasPassphrase ? (
       <fieldset>
         <input
@@ -142,9 +148,9 @@ class Home extends Component {
 
           {passphraseInput}
 
-          <button type="submit" disabled={requesting}>
+          <Button type="submit" disabled={requesting}>
             Create
-          </button>
+          </Button>
         </form>
 
         <style jsx>{`
@@ -190,42 +196,9 @@ class Home extends Component {
             border-color: ${colors.white};
           }
 
-          button {
-            display: inline-block;
-            background-color: ${colors.white};
-            color: ${colors.black};
-            border: 0;
-            border-radius: 0;
-            padding: 12px 80px;
-            font-size: ${typography.f10};
-            text-transform: uppercase;
-            font-weight: ${typography.bold};
-            margin: 30px auto;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            letter-spacing: 2px;
-            transition: all 200ms;
-          }
-
-          button:focus,
-          button:hover {
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
-          }
-
-          button[disabled] {
-            background-color: ${colors.gray};
-            cursor: default;
-          }
-
           @media ${phone} {
             form {
               max-width: 100%;
-            }
-
-            button {
-              width: 100%;
-              display: block;
             }
           }
         `}</style>

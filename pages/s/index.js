@@ -6,6 +6,7 @@ import parser from 'ua-parser-js'
 
 import Page from './../../layouts/page'
 
+import Button from './../../components/button'
 import { colors, typography } from './../../theme'
 
 import api from './../../services/api'
@@ -96,9 +97,9 @@ class S extends Component {
             autoFocus={true}
           />
           <div>
-            <button type="submit" disabled={fetching}>
+            <Button type="submit" disabled={fetching}>
               Reveal the secret
-            </button>
+            </Button>
           </div>
         </form>
         <style jsx>{`
@@ -142,34 +143,6 @@ class S extends Component {
 
           input:focus {
             border-color: ${colors.white};
-          }
-
-          button {
-            display: inline-block;
-            background-color: ${colors.white};
-            color: ${colors.black};
-            border: 0;
-            border-radius: 0;
-            padding: 12px 80px;
-            font-size: ${typography.f10};
-            text-transform: uppercase;
-            font-weight: ${typography.bold};
-            margin: 30px auto;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            letter-spacing: 2px;
-            transition: all 200ms;
-          }
-
-          button:focus,
-          button:hover {
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
-          }
-
-          button[disabled] {
-            background-color: ${colors.gray};
-            cursor: default;
           }
         `}</style>
       </div>
@@ -226,6 +199,7 @@ class S extends Component {
             cursor: pointer;
             transition: all 0.2s;
           }
+
           span:hover {
             color: ${colors.white};
             border-color: ${colors.white};

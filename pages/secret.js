@@ -5,6 +5,8 @@ import copy from 'copy-text-to-clipboard'
 
 import Page from './../layouts/page'
 
+import Button from './../components/button'
+
 import { colors, typography, phone } from './../theme'
 
 class Secret extends Component {
@@ -37,7 +39,7 @@ class Secret extends Component {
           <h1>{`${process.env.APP}/s/${uid}`}</h1>
 
           <p>
-            <button onClick={this.copyUrl}>{txt}</button>
+            <Button onClick={this.copyUrl}>{txt}</Button>
           </p>
         </section>
 
@@ -83,29 +85,6 @@ class Secret extends Component {
             font-size: ${typography.f12};
             text-transform: lowercase;
             line-height: 24px;
-          }
-
-          button {
-            display: inline-block;
-            background-color: ${colors.white};
-            color: ${colors.black};
-            border: 0;
-            border-radius: 0;
-            padding: 12px 50px;
-            font-size: ${typography.f10};
-            text-transform: uppercase;
-            font-weight: ${typography.bold};
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            letter-spacing: 2px;
-            transition: all 200ms;
-          }
-
-          button:focus {
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
           }
 
           @media ${phone} {
