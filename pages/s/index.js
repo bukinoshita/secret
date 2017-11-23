@@ -7,6 +7,8 @@ import parser from 'ua-parser-js'
 import Page from './../../layouts/page'
 
 import Button from './../../components/button'
+import Input from './../../components/input'
+
 import { colors, typography } from './../../theme'
 
 import api from './../../services/api'
@@ -80,21 +82,20 @@ class S extends Component {
 
   render() {
     const { hasPassphrase, passphrase, message, fetched, fetching } = this.state
-
     const styles = this.state.sFetched ? { borderColor: 'red' } : null
 
     const passphraseInput = hasPassphrase ? (
       <div>
         <p>Shh... we cannot tell you the secret without the passphrase.</p>
         <form onSubmit={this.revealSecret}>
-          <input
+          <Input
             type="text"
             placeholder="Your passphrase"
             name="passphrase"
             value={passphrase}
             onChange={this.onInputChange}
-            style={styles}
             autoFocus={true}
+            customStyle={styles}
           />
           <div>
             <Button type="submit" disabled={fetching}>
@@ -108,41 +109,6 @@ class S extends Component {
             font-size: ${typography.f12};
             font-weight: ${typography.semibold};
             margin-top: 10px;
-          }
-
-          input {
-            width: 100%;
-            resize: none;
-            background-color: transparent;
-            border: 1px solid ${colors.gray};
-            padding: 15px;
-            font-size: ${typography.f12};
-            color: ${colors.white};
-            margin-top: 15px;
-            outline: none;
-            font-weight: ${typography.semibold};
-            transition: all 200ms;
-            max-width: 500px;
-          }
-
-          input::-webkit-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          input::-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:-ms-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:focus {
-            border-color: ${colors.white};
           }
         `}</style>
       </div>

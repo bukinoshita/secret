@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { colors, typography } from './../theme'
+import { colors, typography, phone } from './../theme'
 
 const Button = ({ children, type, onClick, disabled }) => {
   return (
@@ -36,6 +36,13 @@ const Button = ({ children, type, onClick, disabled }) => {
         button[disabled] {
           background-color: ${colors.gray};
           cursor: default;
+        }
+
+        @media ${phone} {
+          button {
+            display: block;
+            width: 100%;
+          }
         }
       `}</style>
     </button>

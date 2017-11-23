@@ -6,6 +6,7 @@ import Router from 'next/router'
 import Page from './../layouts/page'
 
 import Button from './../components/button'
+import Input from './../components/input'
 
 import { colors, typography, phone } from './../theme'
 
@@ -63,56 +64,14 @@ class Home extends Component {
   render() {
     const { message, hasPassphrase, passphrase, requesting } = this.state
     const passphraseInput = hasPassphrase ? (
-      <fieldset>
-        <input
-          type="text"
-          placeholder="Your passphrase"
-          name="passphrase"
-          value={passphrase}
-          onChange={this.onInputChange}
-          autoFocus={true}
-        />
-
-        <style jsx>{`
-          fieldset {
-            border: 0;
-          }
-
-          input {
-            width: 100%;
-            resize: none;
-            background-color: transparent;
-            border: 1px solid ${colors.gray};
-            padding: 15px;
-            font-size: ${typography.f12};
-            color: ${colors.white};
-            margin-top: 15px;
-            outline: none;
-            font-weight: ${typography.semibold};
-            transition: all 200ms;
-          }
-
-          input::-webkit-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          input::-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:-ms-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          input:focus {
-            border-color: ${colors.white};
-          }
-        `}</style>
-      </fieldset>
+      <Input
+        type="text"
+        placeholder="Your passphrase"
+        name="passphrase"
+        value={passphrase}
+        onChange={this.onInputChange}
+        autoFocus={true}
+      />
     ) : (
       <span onClick={this.addPassphrase}>
         + add passphrase
@@ -138,12 +97,13 @@ class Home extends Component {
     return (
       <Page>
         <form onSubmit={this.onSubmit}>
-          <textarea
+          <Input
             placeholder="Your secret..."
             name="message"
             value={message}
             onChange={this.onInputChange}
             autoFocus={true}
+            multiline={true}
           />
 
           {passphraseInput}
@@ -160,40 +120,6 @@ class Home extends Component {
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-          }
-
-          textarea {
-            width: 100%;
-            resize: none;
-            min-height: 100px;
-            background-color: transparent;
-            border: 1px solid ${colors.gray};
-            padding: 15px;
-            font-size: ${typography.f12};
-            color: ${colors.white};
-            outline: none;
-            font-weight: ${typography.semibold};
-            transition: all 200ms;
-          }
-
-          textarea::-webkit-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          textarea::-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          textarea:-ms-input-placeholder {
-            color: ${colors.gray};
-          }
-
-          textarea:-moz-placeholder {
-            color: ${colors.gray};
-          }
-
-          textarea:focus {
-            border-color: ${colors.white};
           }
 
           @media ${phone} {
