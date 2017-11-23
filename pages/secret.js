@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component } from 'react'
-import Link from 'next/link'
 import copy from 'copy-text-to-clipboard'
 
 import Page from './../layouts/page'
@@ -28,20 +27,17 @@ class Secret extends Component {
   render() {
     const { uid } = this.props.url.query
     const { show } = this.state
-    const hasClass = show ? 'visible' : ''
+    const txt = show ? 'copied!' : 'copy link'
 
     return (
       <Page>
         <section>
           <label>Your link:</label>
-          <h3 className={hasClass}>copied</h3>
-          <h1 onClick={this.copyUrl}>{`${process.env.APP}/s/${uid}`}</h1>
+          <h2>Do not open! Share your secret with a friend.</h2>
+          <h1>{`${process.env.APP}/s/${uid}`}</h1>
 
           <p>
-            Click on the link and send to the person or{' '}
-            <Link prefetch href="/">
-              <span>create a new secret</span>
-            </Link>
+            <button onClick={this.copyUrl}>{txt}</button>
           </p>
         </section>
 
@@ -58,24 +54,11 @@ class Secret extends Component {
             font-size: ${typography.f12};
           }
 
-          h3 {
+          h2 {
             color: ${colors.gray};
             font-size: ${typography.f12};
-            position: absolute;
-            text-align: center;
-            left: 0;
-            right: 0;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 18px;
             font-weight: ${typography.semibold};
-            opacity: 0;
-            transition: all 0.2s;
-          }
-
-          .visible {
-            opacity: 1;
-            margin-top: 8px;
+            margin-top: 10px;
           }
 
           h1 {
@@ -95,22 +78,34 @@ class Secret extends Component {
             border-color: ${colors.white};
           }
 
-          span {
-            border-bottom: 1px solid ${colors.gray};
-            cursor: pointer;
-            transition: all 0.2s;
-          }
-
-          span:hover {
-            color: ${colors.white};
-            border-color: ${colors.white};
-          }
-
           p {
             color: ${colors.gray};
             font-size: ${typography.f12};
             text-transform: lowercase;
             line-height: 24px;
+          }
+
+          button {
+            display: inline-block;
+            background-color: ${colors.white};
+            color: ${colors.black};
+            border: 0;
+            border-radius: 0;
+            padding: 12px 50px;
+            font-size: ${typography.f10};
+            text-transform: uppercase;
+            font-weight: ${typography.bold};
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            letter-spacing: 2px;
+            transition: all 200ms;
+          }
+
+          button:focus {
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
           }
 
           @media ${phone} {
@@ -119,10 +114,6 @@ class Secret extends Component {
               overflow-x: auto;
               font-size: ${typography.f12};
               margin: 15px auto;
-            }
-
-            .visible {
-              margin-top: 0;
             }
           }
         `}</style>
