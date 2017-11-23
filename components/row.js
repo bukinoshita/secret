@@ -13,9 +13,6 @@ export default ({ children }) => (
         margin-right: auto;
         padding-left: 25px;
         padding-right: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       }
     `}</style>
   </div>

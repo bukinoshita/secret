@@ -40,7 +40,7 @@ if (global.document) {
 
 const Page = ({ children }) => {
   return (
-    <main>
+    <div>
       <Head>
         <title>
           {pkg.name} — {pkg.description}
@@ -80,35 +80,65 @@ const Page = ({ children }) => {
       </Head>
 
       <Row>
-        <header>
-          <Link prefetch href="/">
-            <div>
-              <Logo />
+        <main>
+          <header>
+            <Link prefetch href="/">
+              <div>
+                <Logo />
 
-              <p>
-                send a message through a safe, private, and encrypted link that
-                automatically expires to ensure your stuff does not remain
-                online forever.
-              </p>
-            </div>
-          </Link>
-        </header>
+                <p>
+                  send a message through a safe, private, and encrypted link
+                  that automatically expires to ensure your stuff does not
+                  remain online forever.
+                </p>
+              </div>
+            </Link>
+          </header>
 
-        {children}
+          <section>{children}</section>
 
-        <footer>
-          <span>
-            created by{' '}
-            <a href="https://twitter.com/bukinoshita">@bukinoshita</a> /{' '}
-            <a href="https://github.com/bukinoshita/secret">github</a>
-          </span>
-        </footer>
+          <footer>
+            <ul>
+              <li>
+                <Link prefetch href="/about">
+                  <span>About</span>
+                </Link>
+              </li>
+
+              <li>
+                <Link prefetch href="/help">
+                  <span>Help</span>
+                </Link>
+              </li>
+
+              <li>
+                <a href="https://github.com/bukinoshita/secret/releases/latest">
+                  <span>Releases</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/bukinoshita/secret">
+                  <span>Github</span>
+                </a>
+              </li>
+            </ul>
+
+            <span>
+              created by{' '}
+              <a href="https://twitter.com/bukinoshita">@bukinoshita</a>
+            </span>
+          </footer>
+        </main>
       </Row>
 
       <style jsx>{`
         main {
           position: relative;
           min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
 
         header {
@@ -116,11 +146,16 @@ const Page = ({ children }) => {
           height: 350px;
           display: flex;
           align-items: center;
+          flex-basis: 350px;
         }
 
         header div {
           width: 100%;
           cursor: pointer;
+        }
+
+        section {
+          flex-basis: calc(100vh - 450px);
         }
 
         p {
@@ -134,11 +169,8 @@ const Page = ({ children }) => {
         }
 
         footer {
-          position: absolute;
-          bottom: 30px;
-          left: 0;
-          right: 0;
           text-align: center;
+          margin-bottom: 30px;
         }
 
         span {
@@ -154,7 +186,8 @@ const Page = ({ children }) => {
           position: relative;
         }
 
-        a:after {
+        a:after,
+        li span:after {
           content: '';
           height: 1px;
           background-color: ${colors.white};
@@ -168,9 +201,52 @@ const Page = ({ children }) => {
           transition: all 200ms;
         }
 
-        a:hover:after {
+        a:hover:after,
+        li span:hover:after {
           opacity: 1;
           transform: scale(1, 1);
+        }
+
+        ul {
+          margin-bottom: 20px;
+        }
+
+        li {
+          display: inline-block;
+          margin-right: 4px;
+          padding-right: 4px;
+        }
+
+        li:after {
+          content: '/';
+          color: ${colors.gray};
+          font-size: ${typography.f12};
+          margin-left: 4px;
+          padding-left: 4px;
+        }
+
+        li:hover span {
+          color: ${colors.white};
+        }
+
+        li:last-child {
+          margin-right: 0;
+          padding-right: 0;
+        }
+
+        li:last-child:after {
+          content: '';
+        }
+
+        li span {
+          font-weight: ${typography.semibold};
+          text-transform: lowercase;
+          cursor: pointer;
+          position: relative;
+          display: inline-block;
+
+          font-size: ${typography.f12};
+          transition: all 200ms;
         }
       `}</style>
 
@@ -223,7 +299,7 @@ const Page = ({ children }) => {
           }
         `}
       </style>
-    </main>
+    </div>
   )
 }
 
