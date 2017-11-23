@@ -2,7 +2,7 @@
 
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:3001'
+const apiUrl = process.env.API
 const accessToken = process.env.ACCESS_TOKEN
 
 const api = axios.create({
