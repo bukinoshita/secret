@@ -15,8 +15,9 @@ class Home extends Component {
 
     this.onInputChange = this.onInputChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    this.addPassphrase = this.addPassphrase.bind(this)
 
-    this.state = { message: '' }
+    this.state = { message: '', hasPassphrase: false, passphrase: '' }
   }
 
   onInputChange(event) {
@@ -29,11 +30,11 @@ class Home extends Component {
   onSubmit(event) {
     event.preventDefault()
 
-    const { message } = this.state
+    const { message, passphrase } = this.state
 
     if (message.length >= 1) {
       return api
-        .post('/secret', { message })
+        .post('/secret', { message, passphrase })
         .then(({ uid }) => {
           Router.push(`/secret?uid=${uid}`)
         })
@@ -41,8 +42,85 @@ class Home extends Component {
     }
   }
 
+  addPassphrase() {
+    this.setState({ hasPassphrase: true })
+  }
+
   render() {
-    const { message } = this.state
+    const { message, hasPassphrase, passphrase } = this.state
+
+    const passphraseInput = hasPassphrase ? (
+      <fieldset>
+        <input
+          type="text"
+          placeholder="Your passphrase"
+          name="passphrase"
+          value={passphrase}
+          onChange={this.onInputChange}
+          autoFocus={true}
+        />
+
+        <style jsx>{`
+          fieldset {
+            border: 0;
+          }
+
+          input {
+            width: 100%;
+            resize: none;
+            background-color: transparent;
+            border: 1px solid ${colors.gray};
+            padding: 15px;
+            font-size: ${typography.f12};
+            color: ${colors.white};
+            margin-top: 15px;
+            outline: none;
+            font-weight: ${typography.semibold};
+            transition: all 200ms;
+          }
+
+          input::-webkit-input-placeholder {
+            color: ${colors.gray};
+          }
+
+          input::-moz-placeholder {
+            color: ${colors.gray};
+          }
+
+          input:-ms-input-placeholder {
+            color: ${colors.gray};
+          }
+
+          input:-moz-placeholder {
+            color: ${colors.gray};
+          }
+
+          input:focus {
+            border-color: ${colors.white};
+          }
+        `}</style>
+      </fieldset>
+    ) : (
+      <span onClick={this.addPassphrase}>
+        + add passphrase
+        <style jsx>{`
+          span {
+            display: table;
+            color: ${colors.gray};
+            text-align: left;
+            font-size: ${typography.f12};
+            font-weight: ${typography.semibold};
+            margin-top: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+          }
+
+          span:hover {
+            color: ${colors.white};
+          }
+        `}</style>
+      </span>
+    )
 
     return (
       <Page>
@@ -52,7 +130,10 @@ class Home extends Component {
             name="message"
             value={message}
             onChange={this.onInputChange}
+            autoFocus={true}
           />
+
+          {passphraseInput}
 
           <button type="submit">Create</button>
         </form>
@@ -69,7 +150,7 @@ class Home extends Component {
           textarea {
             width: 100%;
             resize: none;
-            min-height: 150px;
+            min-height: 100px;
             background-color: transparent;
             border: 1px solid ${colors.gray};
             padding: 15px;
