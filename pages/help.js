@@ -25,7 +25,7 @@ class About extends Component {
           <h2>02.</h2>
 
           <p>
-            After your click the `create` button, we will generate an{' '}
+            After you click the `create` button, we will generate an{' '}
             <strong>unique</strong> and <strong>encrypted</strong> link. You can
             copy this link and share it with someone.
           </p>
