@@ -32,6 +32,13 @@ $ git clone https://github.com/bukinoshita/secret.git && cd secret && yarn && ec
 Please see our [contributing.md](https://github.com/bukinoshita/secret/blob/master/contributing.md).
 
 
+## Product Hunt
+
+<a href="https://www.producthunt.com/posts/secret-3">
+  <img src="ph.png" width="1109">
+</a>
+
+
 ## Sponsors
 
 <img src="https://github.com/bukinoshita/hackdisrupt/blob/staging/design/assets/github-sponsor.png"/>
