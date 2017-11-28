@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import Router from 'next/router'
 import Link from 'next/link'
+import { encode } from 'base64-arraybuffer'
 
 import Page from './../layouts/page'
 
@@ -12,8 +13,9 @@ import Input from './../components/input'
 import { colors, typography, phone } from './../theme'
 
 import api from './../services/api'
+import { encrypt } from './../services/crypto'
 
-class Home extends Component {
+class Canary extends Component {
   constructor() {
     super()
 
@@ -38,21 +40,31 @@ class Home extends Component {
 
   onSubmit(event) {
     event.preventDefault()
-    this.setState({ requesting: true })
 
+    this.setState({ requesting: true })
     const { message, passphrase } = this.state
 
     if (message.length >= 1) {
-      return api
-        .post('/secret', { message, passphrase })
-        .then(({ uid }) => {
-          this.setState({ requesting: false })
-          Router.push(`/secret?uid=${uid}`)
-        })
-        .catch(err => {
-          this.setState({ requesting: false })
-          console.log(err)
-        })
+      encrypt(message).then(({ ctBuffer, iv }) => {
+        const ctBufferString = encode(ctBuffer)
+        const ivString = encode(iv)
+
+        return api
+          .post('/canary', {
+            message,
+            passphrase,
+            ctBuffer: ctBufferString,
+            iv: ivString
+          })
+          .then(({ uid }) => {
+            this.setState({ requesting: false })
+            Router.push(`/secret?uid=${uid}&c=true`)
+          })
+          .catch(err => {
+            this.setState({ requesting: false })
+            console.log(err)
+          })
+      })
     }
 
     this.setState({ requesting: false })
@@ -98,11 +110,10 @@ class Home extends Component {
     return (
       <Page>
         <h3>
-          Use{' '}
-          <Link href="/canary">
+          You are using{' '}
+          <Link href="/about#canary">
             <span>Canary</span>
-          </Link>{' '}
-          if you want a more secure secret.
+          </Link>.
           <Link href="/about#canary">
             <label>Learn more</label>
           </Link>
@@ -194,4 +205,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Canary

@@ -10,18 +10,22 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 const route = pathMatch()
-const match = route('/s/:id')
+const matchS = route('/s/:id')
+const matchC = route('/c/:id')
 
 app.prepare().then(() => {
   createServer((req, res) => {
     const { pathname, query } = parse(req.url, true)
-    const params = match(pathname)
-    if (params === false) {
-      handle(req, res)
-      return
+
+    if (matchC(pathname)) {
+      return app.render(req, res, '/c', Object.assign(matchC(pathname), query))
     }
 
-    app.render(req, res, '/s', Object.assign(params, query))
+    if (matchS(pathname)) {
+      return app.render(req, res, '/s', Object.assign(matchS(pathname), query))
+    }
+
+    handle(req, res)
   }).listen(port, err => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)

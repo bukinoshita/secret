@@ -26,11 +26,40 @@ class About extends Component {
             person sees it it will automatically delete the secret forever.
           </p>
 
+          <h2 id="canary">Canary</h2>
+
+          <p>
+            When you use `secret`, we receive an encrypted copy of the secret.
+            `secret` does not have the ability to access the content of your
+            encrypted secret, and only keeps it untill somebody opens it.
+          </p>
+
+          <p>
+            `secret` uses WebCrypto API with the AES-GCM algorithm to encrypt
+            and decrypt the secret in the browser, meaning the secret that's
+            transferred to `secret`'s server is already encrypted and its
+            contents can't be viewed by us.
+          </p>
+
+          <p>
+            Anyone you provide with the unique link (including the encryption
+            key) to your encrypted secret will be able to open and access that
+            secret. You should not provide the link to anyone you do not want to
+            have access to your encrypted secret.
+          </p>
+
+          <p>
+            * Make sure you are using a modern browser that{' '}
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility">
+              supports WebCrypto API
+            </a>.
+          </p>
+
           <h2>Links</h2>
 
           <p>
             Check us on{' '}
-            <a href="https://www.producthunt.com/posts/secret-2">
+            <a href="https://www.producthunt.com/posts/secret-3">
               Product Hunt
             </a>{' '}
             and <a href="https://github.com/bukinoshita/secret">GitHub</a>.

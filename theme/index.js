@@ -3,7 +3,9 @@
 export const colors = {
   white: '#ffffff',
   black: '#000000',
-  gray: '#aaa'
+  gray: '#aaaaaa',
+  pink: '#ff0080',
+  green: '#00e7c0'
 }
 
 export const typography = {
