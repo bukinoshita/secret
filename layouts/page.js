@@ -11,7 +11,7 @@ import Row from './../components/row'
 import Logo from './../components/logo'
 
 import pkg from './../package'
-import { colors, typography } from './../theme'
+import { colors, typography, phone } from './../theme'
 
 let progress
 const stopProgress = () => {
@@ -106,6 +106,12 @@ const Page = ({ children }) => {
               </li>
 
               <li>
+                <Link prefetch href="/canary">
+                  <span className="new">canary</span>
+                </Link>
+              </li>
+
+              <li>
                 <Link prefetch href="/about">
                   <span>About</span>
                 </Link>
@@ -186,14 +192,24 @@ const Page = ({ children }) => {
           display: block;
         }
 
+        .new:after {
+          content: 'new';
+          border: 1px solid ${colors.green};
+          padding: 1px 4px;
+          margin-left: 4px;
+          color: ${colors.green};
+          font-weight: ${typography.bold};
+          font-size: ${typography.f10};
+        }
+
         a {
           color: ${colors.white};
           font-weight: ${typography.bold};
           position: relative;
         }
 
-        a:after,
-        li span:after {
+        a:before,
+        li span:before {
           content: '';
           height: 1px;
           background-color: ${colors.white};
@@ -207,8 +223,8 @@ const Page = ({ children }) => {
           transition: all 200ms;
         }
 
-        a:hover:after,
-        li span:hover:after {
+        a:hover:before,
+        li span:hover:before {
           opacity: 1;
           transform: scale(1, 1);
         }
@@ -250,9 +266,14 @@ const Page = ({ children }) => {
           cursor: pointer;
           position: relative;
           display: inline-block;
-
           font-size: ${typography.f12};
           transition: all 200ms;
+        }
+
+        @media ${phone} {
+          li {
+            line-height: 1.75rem;
+          }
         }
       `}</style>
 

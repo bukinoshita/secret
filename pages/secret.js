@@ -19,24 +19,26 @@ class Secret extends Component {
   }
 
   copyUrl() {
-    const { uid } = this.props.url.query
+    const { uid, c } = this.props.url.query
+    const type = c ? 'c' : 's'
 
-    copy(`${process.env.APP}/s/${uid}`)
+    copy(`${process.env.APP}/${type}/${uid}`)
 
     this.setState({ show: true })
   }
 
   render() {
-    const { uid } = this.props.url.query
+    const { uid, c } = this.props.url.query
     const { show } = this.state
     const txt = show ? 'copied!' : 'copy link'
+    const type = c ? 'c' : 's'
 
     return (
       <Page>
         <section>
           <label>Your link:</label>
           <h2>Do not open! Share your secret with a friend.</h2>
-          <h1>{`${process.env.APP}/s/${uid}`}</h1>
+          <h1>{`${process.env.APP}/${type}/${uid}`}</h1>
 
           <p>
             <Button onClick={this.copyUrl}>{txt}</Button>

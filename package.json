@@ -1,18 +1,13 @@
 {
   "name": "secret",
   "version": "0.1.0",
-  "description": "send a message through a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.",
+  "description":
+    "send a message through a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.",
   "main": "index.js",
   "repository": "bukinoshita/secret.git",
   "author": "Bu Kinoshita <bukinoshita@gmail.com>",
   "license": "MIT",
-  "keywords": [
-    "secret",
-    "getsecret",
-    "safe",
-    "private",
-    "encrypted"
-  ],
+  "keywords": ["secret", "getsecret", "safe", "private", "encrypted"],
   "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "node server",
@@ -24,6 +19,7 @@
     "axios": "^0.17.1",
     "babel-plugin-inline-dotenv": "^1.1.1",
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
+    "base64-arraybuffer": "^0.1.5",
     "copy-text-to-clipboard": "^1.0.3",
     "next": "^4.2.0-canary.1",
     "nprogress": "^0.2.0",
@@ -40,28 +36,18 @@
     "xo": "^0.18.2"
   },
   "babel": {
-    "presets": [
-      "next/babel"
-    ],
+    "presets": ["next/babel"],
     "env": {
       "development": {
-        "plugins": [
-          "inline-dotenv"
-        ]
+        "plugins": ["inline-dotenv"]
       },
       "production": {
-        "plugins": [
-          "transform-inline-environment-variables"
-        ]
+        "plugins": ["transform-inline-environment-variables"]
       }
     }
   },
   "xo": {
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
     "rules": {
       "import/no-extraneous-dependencies": 0,
       "import/no-unresolved": 0,
@@ -69,13 +55,8 @@
       "react/prop-types": 0,
       "react/display-name": 0
     },
-    "ignores": [
-      "node_modules",
-      "static/*.js"
-    ],
-    "globals": [
-      "document"
-    ]
+    "ignores": ["node_modules", "static/*.js"],
+    "globals": ["document", "TextEncoder", "TextDecoder", "crypto"]
   },
   "lint-staged": {
     "*.js": [
