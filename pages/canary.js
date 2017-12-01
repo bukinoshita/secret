@@ -51,7 +51,6 @@ class Canary extends Component {
 
         return api
           .post('/canary', {
-            message,
             passphrase,
             ctBuffer: ctBufferString,
             iv: ivString
