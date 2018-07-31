@@ -158,6 +158,7 @@ class S extends Component {
             margin: 30px auto 70px;
             transition: all 0.2s;
             max-width: 600px;
+            word-break: break-all;
           }
 
           span {
