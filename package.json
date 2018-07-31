@@ -1,6 +1,6 @@
 {
   "name": "secret",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "send a message through a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.",
   "main": "index.js",
   "repository": "bukinoshita/secret.git",
