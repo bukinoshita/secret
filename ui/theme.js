@@ -77,7 +77,8 @@ theme.radius = Object.assign('3px', {
 
 theme.colors = {
   black: '#000000',
-  white: '#ffffff'
+  white: '#ffffff',
+  gray: '#aaaaaa'
 }
 
 export default theme
