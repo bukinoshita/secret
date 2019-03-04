@@ -13,7 +13,7 @@ const Row = ({ children }) => {
       <style jsx>{`
         div {
           width: 100%;
-          max-width: 1000px;
+          max-width: 750px;
           padding-left: ${theme.spacing.large};
           padding-right: ${theme.spacing.large};
           margin-left: auto;
