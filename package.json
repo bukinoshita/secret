@@ -46,7 +46,10 @@
     ],
     "globals": [
       "crypto"
-    ]
+    ],
+    "rules": {
+      "react/no-unescaped-entities": 0
+    }
   },
   "lint-staged": {
     "*.js": [
