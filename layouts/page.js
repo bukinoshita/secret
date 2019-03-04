@@ -87,6 +87,7 @@ const Page = ({ children }) => {
 
           body {
             background-color: ${theme.colors.black};
+            color: ${theme.colors.white};
           }
 
           a {
