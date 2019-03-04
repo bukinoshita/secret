@@ -1,45 +1,50 @@
 const theme = {}
 
 theme.typography = {
+  title: {
+    fontSize: '75px',
+    lineHeight: '100px',
+    fontWeight: '700'
+  },
   h100: {
     fontSize: '42px',
-    lineHeight: '44px',
+    lineHeight: '56px',
     fontWeight: '700'
   },
   h200: {
     fontSize: '28px',
-    lineHeight: '32px',
+    lineHeight: '40px',
     fontWeight: '700'
   },
   h300: {
     fontSize: '26px',
-    lineHeight: '32px',
+    lineHeight: '38px',
     fontWeight: '500'
   },
   h400: {
     fontSize: '20px',
-    lineHeight: '24px',
+    lineHeight: '32px',
     fontWeight: '500'
   },
   h500: {
     fontSize: '16px',
-    lineHeight: '24px',
+    lineHeight: '28px',
     fontWeight: '700'
   },
   h600: {
     fontSize: '12px',
-    lineHeight: '16px',
+    lineHeight: '24px',
     fontWeight: '700'
   },
   paragraph: {
     fontSize: '14px',
-    lineHeight: '20px',
+    lineHeight: '30px',
     fontWeight: '400',
     marginBottom: '12px'
   },
   caption: {
     fontSize: '12px',
-    lineHeight: '16px',
+    lineHeight: '20px',
     fontWeight: '500'
   }
 }
