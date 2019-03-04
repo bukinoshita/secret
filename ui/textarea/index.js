@@ -7,16 +7,32 @@ import theme from '../theme'
 
 class Textarea extends PureComponent {
   render() {
-    const { placeholder, value, onChange } = this.props
+    const { name, label, placeholder, value, onChange } = this.props
 
     return (
       <fieldset>
-        <textarea placeholder={placeholder} value={value} onChange={onChange} autoFocus />
+        <label htmlFor={name}>{label}</label>
+        <textarea
+          name={name}
+          id={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          autoFocus
+        />
 
         <style jsx>{`
           fieldset {
             margin-bottom: ${theme.spacing.large};
             border: 0;
+          }
+
+          label {
+            font-size: ${theme.typography.h500.fontSize};
+            font-weight: ${theme.typography.h500.fontWeight};
+            line-height: ${theme.typography.h500.lineHeight};
+            margin-bottom: ${theme.spacing};
+            display: block;
           }
 
           textarea {
@@ -40,6 +56,8 @@ class Textarea extends PureComponent {
 }
 
 Textarea.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
