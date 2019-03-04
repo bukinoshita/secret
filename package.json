@@ -43,6 +43,9 @@
       "prettier",
       "prettier/react",
       "plugin:react/recommended"
+    ],
+    "globals": [
+      "crypto"
     ]
   },
   "lint-staged": {
