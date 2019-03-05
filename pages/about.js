@@ -4,10 +4,6 @@ import React from 'react'
 // Layouts
 import Page from '../layouts/page'
 
-// Components
-import Header from '../components/header'
-import Back from '../components/back'
-
 // UI
 import Row from '../ui/row'
 import theme from '../ui/theme'
@@ -16,9 +12,6 @@ const About = () => {
   return (
     <Page>
       <Row>
-        <Header />
-        <Back />
-
         <h2>About</h2>
 
         <p>

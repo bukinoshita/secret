@@ -8,11 +8,6 @@ import { Choose } from 'react-extras'
 // Layouts
 import Page from '../../../layouts/page'
 
-// Components
-import Header from '../../../components/header'
-import Footer from '../../../components/footer'
-import Back from '../../../components/back'
-
 // UI
 import theme from '../../../ui/theme'
 
@@ -66,9 +61,6 @@ class SecretView extends Component {
 
     return (
       <Page>
-        <Header />
-        <Back />
-
         <Choose>
           <Choose.When condition={Boolean(secret && !error && decrypted)}>
             <p>{secret}</p>
@@ -82,8 +74,6 @@ class SecretView extends Component {
             <p>Secret does not exist anymore.</p>
           </Choose.Otherwise>
         </Choose>
-
-        <Footer />
 
         <style jsx>{`
           p {

@@ -7,13 +7,10 @@ import Router from 'next/router'
 // Layouts
 import Page from '../layouts/page'
 
-// Components
-import Header from '../components/header'
-import Footer from '../components/footer'
-
 // UI
 import Textarea from '../ui/textarea'
 import Button from '../ui/button'
+import theme from '../ui/theme'
 
 // Services
 import api from '../services/api'
@@ -57,7 +54,11 @@ class Home extends Component {
 
     return (
       <Page>
-        <Header />
+        <h1>
+          Secret helps you to send a message through a safe, private, and encrypted link that
+          <br />
+          automatically expires to ensure your stuff does not remain online forever
+        </h1>
 
         <form onSubmit={this.onFormSubmit}>
           <Textarea
@@ -71,7 +72,15 @@ class Home extends Component {
           <Button type="submit">Create secret</Button>
         </form>
 
-        <Footer />
+        <style jsx>{`
+          h1 {
+            font-size: ${theme.typography.title.fontSize};
+            font-weight: ${theme.typography.title.fontWeight};
+            line-height: ${theme.typography.title.lineHeight};
+            text-align: center;
+            margin-bottom: ${theme.spacing.xxxLarge};
+          }
+        `}</style>
       </Page>
     )
   }

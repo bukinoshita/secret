@@ -8,11 +8,6 @@ import copy from 'copy-text-to-clipboard'
 // Layouts
 import Page from '../../layouts/page'
 
-// Components
-import Header from '../../components/header'
-import Footer from '../../components/footer'
-import Back from '../../components/back'
-
 // UI
 import Button from '../../ui/button'
 import theme from '../../ui/theme'
@@ -50,9 +45,6 @@ class SecretDetail extends Component {
 
     return (
       <Page>
-        <Header />
-        <Back />
-
         <label>Share your secret url</label>
         <div>
           <label>Your secret url:</label>
@@ -63,8 +55,6 @@ class SecretDetail extends Component {
         <Button size="small" onClick={this.onCopyToClipboard}>
           Copy link to the clipboard
         </Button>
-
-        <Footer />
 
         <style jsx>{`
           div {
