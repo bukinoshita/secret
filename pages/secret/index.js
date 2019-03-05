@@ -11,6 +11,7 @@ import Page from '../../layouts/page'
 // Components
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import Back from '../../components/back'
 
 // UI
 import Button from '../../ui/button'
@@ -45,6 +46,7 @@ class SecretDetail extends Component {
     return (
       <Page>
         <Header />
+        <Back />
 
         <label>Share your secret url</label>
         <div>
@@ -74,6 +76,7 @@ class SecretDetail extends Component {
             cursor: pointer;
             margin-top: ${theme.spacing};
             margin-bottom: ${theme.spacing};
+            overflow: auto;
           }
 
           div:hover {
