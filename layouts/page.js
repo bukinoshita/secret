@@ -1,5 +1,5 @@
 // Packages
-import React from 'react'
+import React, { Fragment } from 'react'
 import Head from 'next/head'
 import Router from 'next/router'
 import Progress from 'nprogress'
@@ -7,6 +7,10 @@ import PropTypes from 'prop-types'
 
 // Root
 import pkg from '../package'
+
+// Components
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 // UI
 import Row from '../ui/row'
@@ -39,7 +43,7 @@ if (global.document) {
 
 const Page = ({ children }) => {
   return (
-    <div>
+    <Fragment>
       <Head>
         <title>
           {pkg.name} — {pkg.description}
@@ -72,7 +76,21 @@ const Page = ({ children }) => {
         <script src="/static/analytics.js" />
       </Head>
 
-      <Row>{children}</Row>
+      <Header />
+
+      <main>
+        <Row>{children}</Row>
+      </main>
+
+      <Footer />
+
+      <style jsx>{`
+        main {
+          min-height: calc(100vh - 400px);
+          display: flex;
+          align-items: center;
+        }
+      `}</style>
 
       <style jsx global>
         {`
@@ -132,7 +150,7 @@ const Page = ({ children }) => {
           }
         `}
       </style>
-    </div>
+    </Fragment>
   )
 }
 
