@@ -2,9 +2,9 @@ const theme = {}
 
 theme.typography = {
   title: {
-    fontSize: '75px',
-    lineHeight: '100px',
-    fontWeight: '700'
+    fontSize: '18px',
+    lineHeight: '30px',
+    fontWeight: '400'
   },
   h100: {
     fontSize: '42px',
