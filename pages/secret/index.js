@@ -19,7 +19,12 @@ import theme from '../../ui/theme'
 
 class SecretDetail extends Component {
   static getInitialProps({ req }) {
-    const host = req && req.header ? req.headers.host : window.location.hostname
+    const host =
+      req && req.headers
+        ? req.headers.host
+        : typeof window === 'undefined'
+        ? ''
+        : window.location.hostname
 
     return { host }
   }
