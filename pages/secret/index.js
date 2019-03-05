@@ -82,6 +82,7 @@ class SecretDetail extends Component {
             margin-top: ${theme.spacing};
             margin-bottom: ${theme.spacing};
             overflow: auto;
+            white-space: no-wrap;
           }
 
           div:hover {
