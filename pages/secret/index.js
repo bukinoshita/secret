@@ -38,7 +38,7 @@ class SecretDetail extends Component {
   onCopyToClipboard() {
     const { router, host } = this.props
     const secretId = router.query.uid
-    const secretUrl = `https://${host}/secret/${secretId}`
+    const secretUrl = `https://${host}/secret/v/${secretId}`
 
     copy(secretUrl)
   }
@@ -46,7 +46,7 @@ class SecretDetail extends Component {
   render() {
     const { router, host } = this.props
     const secretId = router.query.uid
-    const secretUrl = `https://${host}/secret/${secretId}`
+    const secretUrl = `https://${host}/secret/v/${secretId}`
 
     return (
       <Page>
