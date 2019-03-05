@@ -9,6 +9,8 @@ class Footer extends PureComponent {
   render() {
     return (
       <footer>
+        <p>Copyright © 2019, Secret. All rights reserved.</p>
+
         <ul>
           <li>
             <Link prefetch href="/">
@@ -41,20 +43,20 @@ class Footer extends PureComponent {
           </li>
         </ul>
 
-        <span>
-          created by <a href="https://twitter.com/bukinoshita">@bukinoshita</a>
-        </span>
-
         <style jsx>{`
           footer {
-            text-align: center;
-            position: absolute;
-            bottom: ${theme.spacing.large};
-            width: 100%;
-            left: 0;
-            right: 0;
-            margin-left: auto;
-            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            height: 200px;
+            align-items: center;
+            padding-left: 150px;
+            padding-right: 150px;
+          }
+
+          p {
+            font-size: ${theme.typography.paragraph.fontSize};
+            font-weight: ${theme.typography.paragraph.fontWeight};
+            line-height: ${theme.typography.paragraph.lineHeight};
           }
 
           span {
