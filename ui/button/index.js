@@ -7,10 +7,11 @@ import theme from '../theme'
 
 class Button extends PureComponent {
   render() {
-    const { children, type, onClick } = this.props
+    const { children, size, type, onClick } = this.props
+    const isSmall = size === 'small' && 'small'
 
     return (
-      <button type={type} onClick={onClick}>
+      <button className={isSmall} type={type} onClick={onClick}>
         {children}
 
         <style jsx>{`
@@ -25,6 +26,10 @@ class Button extends PureComponent {
             background-color: ${theme.colors.white};
             color: ${theme.colors.black};
           }
+
+          .small {
+            padding: ${theme.spacing} ${theme.spacing.medium};
+          }
         `}</style>
       </button>
     )
@@ -37,6 +42,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.any.isRequired,
+  size: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit']).isRequired,
   onClick: PropTypes.func
 }
