@@ -6,19 +6,19 @@ import parser from 'ua-parser-js'
 import { Choose } from 'react-extras'
 
 // Layouts
-import Page from '../../layouts/page'
+import Page from '../../../layouts/page'
 
 // Components
-import Header from '../../components/header'
-import Footer from '../../components/footer'
-import Back from '../../components/back'
+import Header from '../../../components/header'
+import Footer from '../../../components/footer'
+import Back from '../../../components/back'
 
 // UI
-import theme from '../../ui/theme'
+import theme from '../../../ui/theme'
 
 // Services
-import api from '../../services/api'
-import { decrypt } from '../../services/crypto'
+import api from '../../../services/api'
+import { decrypt } from '../../../services/crypto'
 
 class SecretView extends Component {
   static async getInitialProps({ req, query }) {
