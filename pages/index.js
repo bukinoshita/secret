@@ -39,7 +39,7 @@ class Home extends Component {
       const iv = encode(crypto.iv)
       const { uid } = await api.post('/canary', { ctBuffer, iv })
 
-      Router.push(`/secret/${uid}`)
+      Router.push(`/secret?uid=${uid}`)
     } catch (error) {
       console.error({ error })
     }
