@@ -46,7 +46,8 @@
       "plugin:react/recommended"
     ],
     "globals": [
-      "crypto"
+      "crypto",
+      "window"
     ],
     "rules": {
       "react/no-unescaped-entities": 0
