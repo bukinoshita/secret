@@ -1,9 +1,8 @@
 // Packages
 import axios from 'axios'
-import getConfig from 'next/config'
 
-const { publicRuntimeConfig } = getConfig()
-const { API_URL, ACCESS_TOKEN } = publicRuntimeConfig
+const API_URL = process.env.apiUrl
+const ACCESS_TOKEN = process.env.accessToken
 
 const api = axios.create({
   baseURL: API_URL,

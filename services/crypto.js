@@ -1,8 +1,4 @@
-// Packages
-import getConfig from 'next/config'
-
-const { publicRuntimeConfig } = getConfig()
-const { SECRET_TOKEN } = publicRuntimeConfig
+const SECRET_TOKEN = process.env.secretToken
 
 export const encrypt = async plainText => {
   const ptUtf8 = new TextEncoder().encode(plainText)
