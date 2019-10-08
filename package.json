@@ -29,7 +29,7 @@
     "next": "^4.2.0-canary.1",
     "nprogress": "^0.2.0",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react-dom": "^16.1.2",
     "ua-parser-js": "^0.7.17"
   },
   "devDependencies": {
