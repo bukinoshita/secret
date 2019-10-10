@@ -4561,9 +4561,9 @@ react-deep-force-update@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.1.1.tgz#8ea4263cd6455a050b37445b3f08fd839d86e909"
 
-react-dom@^16.1.1:
-  version "16.1.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"
+react-dom@^16.1.2:
+  version "16.1.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.2.tgz#c4011fa5183fcbdf34344472935ef920d8dc7179"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
