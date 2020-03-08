@@ -24,7 +24,7 @@
     "@now/node": "1.4.1",
     "@types/classnames": "2.2.9",
     "@types/node": "13.7.1",
-    "@types/react": "16.9.19",
+    "@types/react": "16.9.23",
     "@types/styled-jsx": "2.2.8",
     "now": "17.0.3",
     "typescript": "3.7.5"
