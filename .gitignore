@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+.next
+<<<<<<< Updated upstream
+.env
+.env.production
+=======
+.now
+>>>>>>> Stashed changes
