@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { Colors, space } from 'ui/theme'
 
 export const Page = ({ children }: any) => {
   return (
-    <Fragment>
+    <>
       <header>
         <svg width="40" height="40" viewBox="0 0 400 400" fill="none">
           <rect width="400" height="400" rx="100" fill="black" />
@@ -17,7 +17,7 @@ export const Page = ({ children }: any) => {
 
       {children}
 
-      <style jsx={true} global={true}>{`
+      <style jsx global>{`
         * {
           margin: 0;
           padding: 0;
@@ -31,7 +31,7 @@ export const Page = ({ children }: any) => {
         }
       `}</style>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         header {
           height: 100px;
           width: 100%;
@@ -42,6 +42,6 @@ export const Page = ({ children }: any) => {
           margin-bottom: ${space.spacing(10)};
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }

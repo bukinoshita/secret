@@ -1,11 +1,14 @@
 import { NextPageContext } from 'next'
-import { Component } from 'react'
-import { api } from 'utils/api'
-import { Page } from 'layouts/page'
-import { Button } from 'ui/button'
-import { Keychain } from 'utils/keychain'
 import base64ArrayBuffer from 'base64-arraybuffer'
 import classnames from 'classnames'
+import React, { Component } from 'react'
+
+import { Page } from 'layouts/page'
+
+import { Button } from 'ui/button'
+
+import { api } from 'utils/api'
+import { Keychain } from 'utils/keychain'
 
 class Secret extends Component<any, any> {
   keychain: Keychain
@@ -52,7 +55,7 @@ class Secret extends Component<any, any> {
           </div>
         </section>
 
-        <style jsx={true}>{`
+        <style jsx>{`
           section {
             text-align: center;
             margin-top: 240px;

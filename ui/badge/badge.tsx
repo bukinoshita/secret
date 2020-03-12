@@ -10,7 +10,7 @@ export class Badge extends PureComponent<any> {
       <span style={style}>
         {children}
 
-        <style jsx={true}>{`
+        <style jsx>{`
           span {
             color: ${Colors.White};
             background-color: ${Colors.Mountain_Meadown};

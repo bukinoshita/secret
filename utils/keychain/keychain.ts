@@ -1,6 +1,9 @@
 export class Keychain {
   async generateKey(): Promise<CryptoKey> {
-    return crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, ['encrypt', 'decrypt'])
+    return crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, [
+      'encrypt',
+      'decrypt'
+    ])
   }
 
   async importKey(key: string) {
@@ -12,7 +15,10 @@ export class Keychain {
       kty: 'oct'
     }
 
-    return crypto.subtle.importKey('jwk', jwk, 'AES-GCM', true, ['encrypt', 'decrypt'])
+    return crypto.subtle.importKey('jwk', jwk, 'AES-GCM', true, [
+      'encrypt',
+      'decrypt'
+    ])
   }
 
   async exportKey(key: CryptoKey) {
@@ -39,8 +45,16 @@ export class Keychain {
     return { cipherText, iv }
   }
 
-  async decryptMessage(key: CryptoKey, iv: ArrayBuffer, cipheText: ArrayBuffer): Promise<string> {
-    const decrypted = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, cipheText)
+  async decryptMessage(
+    key: CryptoKey,
+    iv: ArrayBuffer,
+    cipheText: ArrayBuffer
+  ): Promise<string> {
+    const decrypted = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv },
+      key,
+      cipheText
+    )
     const dec = new TextDecoder()
 
     return dec.decode(decrypted)
