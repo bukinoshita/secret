@@ -14,19 +14,19 @@
   },
   "dependencies": {
     "axios": "0.19.2",
-    "base64-arraybuffer": "^0.2.0",
+    "base64-arraybuffer": "0.2.0",
     "classnames": "2.2.6",
-    "next": "9.2.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "next": "9.3.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
   },
   "devDependencies": {
     "@now/node": "1.4.1",
-    "@types/classnames": "2.2.9",
-    "@types/node": "13.7.1",
-    "@types/react": "16.9.19",
+    "@types/classnames": "2.2.10",
+    "@types/node": "13.9.0",
+    "@types/react": "16.9.23",
     "@types/styled-jsx": "2.2.8",
-    "now": "17.0.3",
-    "typescript": "3.7.5"
+    "now": "17.0.4",
+    "typescript": "3.8.3"
   }
 }
