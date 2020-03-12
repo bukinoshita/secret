@@ -1,3 +1,3 @@
-export { colors } from './colors'
+export { Colors } from './colors'
 export { radius } from './radius'
 export { spacing } from './spacing'
