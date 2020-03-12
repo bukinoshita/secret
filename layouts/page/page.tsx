@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Colors, spacing } from 'ui/theme'
+import { Colors, space } from 'ui/theme'
 
 export const Page = ({ children }: any) => {
   return (
@@ -37,9 +37,9 @@ export const Page = ({ children }: any) => {
           width: 100%;
           display: flex;
           align-items: center;
-          padding-left: ${spacing.xLarge};
-          padding-right: ${spacing.xLarge};
-          margin-bottom: ${spacing.xxxHuge};
+          padding-left: ${space.spacing(7)};
+          padding-right: ${space.spacing(7)};
+          margin-bottom: ${space.spacing(10)};
         }
       `}</style>
     </Fragment>

@@ -1,7 +1,7 @@
-export enum radius {
-  default = '4px',
-  tiny = '2px',
-  medium = '6px',
-  large = '8px',
-  rounded = '50%'
+export enum Radius {
+  Default = '4px',
+  Tiny = '2px',
+  Medium = '6px',
+  Large = '8px',
+  Rounded = '50%'
 }
