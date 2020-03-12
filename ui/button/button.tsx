@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import React, { PureComponent } from 'react'
 
 import { APPEARANCE, SIZE, TYPE, ButtonProps } from './button.types'
-import { colors, radius, spacing } from '../theme'
+import { colors, radius, spacing } from 'ui/theme'
 
 export class Button extends PureComponent<ButtonProps> {
   static defaultProps = {

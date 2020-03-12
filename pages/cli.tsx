@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { App } from '../layouts/app'
+import { App } from 'layouts/app'
 
 const CLI = () => {
   return (

@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "components": "./components/",
+          "layouts": "./layouts/",
+          "pages": "./pages/",
+          "ui": "./ui/",
+          "utils": "./utils/"
+        }
+      }
+    ]
+  ],
+  "presets": ["next/babel"]
+}

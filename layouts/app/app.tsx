@@ -5,11 +5,11 @@ import React from 'react'
 
 import pkg from '../../package.json'
 
-import { Page } from '../page'
+import { Page } from 'layouts/page'
 
-import { Badge } from '../../ui/badge'
-import { colors, radius, spacing } from '../../ui/theme'
-import { IconCommand, IconCode, IconSlack } from '../../ui/icon'
+import { Badge } from 'ui/badge'
+import { colors, radius, spacing } from 'ui/theme'
+import { IconCommand, IconCode, IconSlack } from 'ui/icon'
 
 export const App = ({ children }: any) => {
   const { asPath } = useRouter()

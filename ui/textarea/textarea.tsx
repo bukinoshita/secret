@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { colors, radius, spacing } from '../theme'
+import { colors, radius, spacing } from 'ui/theme'
 
 export class Textarea extends PureComponent<any> {
   render() {
