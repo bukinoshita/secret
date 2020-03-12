@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import classnames from 'classnames'
+import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 
@@ -17,6 +18,12 @@ export const App = ({ children }: any) => {
 
   return (
     <Page>
+      <Head>
+        <title>
+          {pkg.name} | {pkg.description}
+        </title>
+      </Head>
+
       <main>
         <h1>{pkg.name}</h1>
         <h2>{pkg.description}</h2>
