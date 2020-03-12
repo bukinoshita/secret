@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { colors, spacing } from '../../ui/theme'
+import { colors, spacing } from 'ui/theme'
 
 export const Page = ({ children }: any) => {
   return (

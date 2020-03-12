@@ -1,16 +1,17 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react'
 import base64ArrayBuffer from 'base64-arraybuffer'
 import Router from 'next/router'
-import { App } from '../layouts/app'
 
-import { Button } from '../ui/button'
-import { spacing } from '../ui/theme'
-import { Textarea } from '../ui/textarea'
+import { App } from 'layouts/app'
 
-import { TYPE } from '../ui/button/button.types'
+import { Button } from 'ui/button'
+import { spacing } from 'ui/theme'
+import { Textarea } from 'ui/textarea'
 
-import { Keychain } from '../utils/keychain'
-import { api } from '../utils/api'
+import { TYPE } from 'ui/button/button.types'
+
+import { Keychain } from 'utils/keychain'
+import { api } from 'utils/api'
 
 const Home = () => {
   const [secret, onTypeSecret] = useState<string>('')

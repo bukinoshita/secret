@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { colors, radius, spacing } from '../theme'
+import { colors, radius, spacing } from 'ui/theme'
 
 export class Badge extends PureComponent<any> {
   render() {
