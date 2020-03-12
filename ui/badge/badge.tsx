@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { colors, radius, spacing } from 'ui/theme'
+import { Colors, radius, spacing } from 'ui/theme'
 
 export class Badge extends PureComponent<any> {
   render() {
@@ -12,8 +12,8 @@ export class Badge extends PureComponent<any> {
 
         <style jsx={true}>{`
           span {
-            color: ${colors.white};
-            background-color: ${colors.green};
+            color: ${Colors.White};
+            background-color: ${Colors.Mountain_Meadown};
             text-transform: uppercase;
             padding: ${spacing.small} ${spacing.default};
             border-radius: ${radius.medium};

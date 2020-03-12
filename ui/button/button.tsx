@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import React, { PureComponent } from 'react'
 
 import { APPEARANCE, SIZE, TYPE, ButtonProps } from './button.types'
-import { colors, radius, spacing } from 'ui/theme'
+import { Colors, radius, spacing } from 'ui/theme'
 
 export class Button extends PureComponent<ButtonProps> {
   static defaultProps = {
@@ -34,14 +34,14 @@ export class Button extends PureComponent<ButtonProps> {
           }
 
           .primary {
-            background-color: ${colors.black};
-            color: ${colors.white};
-            border-color: ${colors.black};
+            background-color: ${Colors.Black};
+            color: ${Colors.White};
+            border-color: ${Colors.Black};
           }
 
           .primary.outline {
-            border-color: ${colors.black};
-            color: ${colors.black};
+            border-color: ${Colors.Black};
+            color: ${Colors.Black};
             background-color: transparent;
           }
 

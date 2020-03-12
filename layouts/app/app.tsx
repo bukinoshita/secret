@@ -8,7 +8,7 @@ import pkg from '../../package.json'
 import { Page } from 'layouts/page'
 
 import { Badge } from 'ui/badge'
-import { colors, radius, spacing } from 'ui/theme'
+import { Colors, radius, spacing } from 'ui/theme'
 import { IconCommand, IconCode, IconSlack } from 'ui/icon'
 
 export const App = ({ children }: any) => {
@@ -90,23 +90,19 @@ export const App = ({ children }: any) => {
         }
 
         a {
-          background-color: ${colors.blueishLight};
+          background-color: ${Colors.White_Lilac};
           border-radius: ${radius.large};
           padding: ${spacing.default};
-          color: ${colors.blueishDarker};
+          color: ${Colors.Storm_Gray};
           text-decoration: none;
           display: flex;
           align-items: center;
           transition: 0.25s ease-in-out;
         }
 
-        a:hover:not(.is-active) {
-          background-color: ${colors.blueishDark};
-        }
-
         .is-active {
-          background-color: ${colors.black};
-          color: ${colors.white};
+          background-color: ${Colors.Black};
+          color: ${Colors.White};
         }
       `}</style>
     </Page>

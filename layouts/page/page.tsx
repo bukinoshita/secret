@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { colors, spacing } from 'ui/theme'
+import { Colors, spacing } from 'ui/theme'
 
 export const Page = ({ children }: any) => {
   return (
@@ -26,7 +26,7 @@ export const Page = ({ children }: any) => {
 
         body {
           font-family: 'Inter';
-          color: ${colors.black};
+          color: ${Colors.Black};
           font-size: 13px;
         }
       `}</style>

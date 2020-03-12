@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { colors, radius, spacing } from 'ui/theme'
+import { Colors, radius, spacing } from 'ui/theme'
 
 export class Textarea extends PureComponent<any> {
   render() {
@@ -14,7 +14,7 @@ export class Textarea extends PureComponent<any> {
           {`
             textarea {
               width: 100%;
-              background-color: ${colors.blueishLight};
+              background-color: ${Colors.White_Lilac};
               border-radius: ${radius.large};
               border: none;
               resize: none;
@@ -22,26 +22,27 @@ export class Textarea extends PureComponent<any> {
               padding: ${spacing.medium};
               font-size: 13px;
               line-height: 20px;
+              color: ${Colors.Black};
             }
 
             textarea::-webkit-input-placeholder {
-              color: ${colors.blueishDarker};
+              color: ${Colors.Storm_Gray};
             }
 
             textarea:-moz-placeholder {
-              color: ${colors.blueishDarker};
+              color: ${Colors.Storm_Gray};
             }
 
             textarea::-moz-placeholder {
-              color: ${colors.blueishDarker};
+              color: ${Colors.Storm_Gray};
             }
 
             textarea:-ms-input-placeholder {
-              color: ${colors.blueishDarker};
+              color: ${Colors.Storm_Gray};
             }
 
             textarea::placeholder {
-              color: ${colors.blueishDarker};
+              color: ${Colors.Storm_Gray};
             }
           `}
         </style>
