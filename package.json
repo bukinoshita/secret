@@ -38,6 +38,17 @@
     "xo": "0.28.0"
   },
   "xo": {
-    "extends": "xo-react"
+    "extends": "xo-react",
+    "globals": [
+      "window",
+      "crypto"
+    ],
+    "ignores": [
+      "public"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": 1,
+      "react/button-has-type": 0
+    }
   }
 }
