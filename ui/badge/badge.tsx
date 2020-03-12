@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { Colors, radius, spacing } from 'ui/theme'
+import { Colors, Radius, space } from 'ui/theme'
 
 export class Badge extends PureComponent<any> {
   render() {
@@ -15,8 +15,8 @@ export class Badge extends PureComponent<any> {
             color: ${Colors.White};
             background-color: ${Colors.Mountain_Meadown};
             text-transform: uppercase;
-            padding: ${spacing.small} ${spacing.default};
-            border-radius: ${radius.medium};
+            padding: ${space.spacing(1)} ${space.spacing(2)};
+            border-radius: ${Radius.Medium};
             font-size: 10px;
             line-height: 10px;
             text-align: center;

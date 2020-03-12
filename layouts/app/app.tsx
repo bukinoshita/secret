@@ -9,7 +9,7 @@ import pkg from '../../package.json'
 import { Page } from 'layouts/page'
 
 import { Badge } from 'ui/badge'
-import { Colors, radius, spacing } from 'ui/theme'
+import { Colors, Radius, space } from 'ui/theme'
 import { IconCommand, IconCode, IconSlack } from 'ui/icon'
 
 export const App = ({ children }: any) => {
@@ -33,7 +33,7 @@ export const App = ({ children }: any) => {
             <li>
               <Link href="/">
                 <a className={isActive('/')} href="/">
-                  <IconCommand style={{ marginRight: spacing.small }} />
+                  <IconCommand style={{ marginRight: space.spacing(1) }} />
                   Web
                 </a>
               </Link>
@@ -41,18 +41,18 @@ export const App = ({ children }: any) => {
             <li>
               <Link href="/cli">
                 <a className={isActive('/cli')} href="/cli">
-                  <IconCode style={{ marginRight: spacing.small }} />
+                  <IconCode style={{ marginRight: space.spacing(1) }} />
                   Command line
-                  <Badge style={{ marginLeft: spacing.medium }}>New</Badge>
+                  <Badge style={{ marginLeft: space.spacing(4) }}>New</Badge>
                 </a>
               </Link>
             </li>
             <li>
               <Link href="/slack">
                 <a className={isActive('/slack')} href="/slack">
-                  <IconSlack style={{ marginRight: spacing.small }} />
+                  <IconSlack style={{ marginRight: space.spacing(1) }} />
                   Slack
-                  <Badge style={{ marginLeft: spacing.medium }}>New</Badge>
+                  <Badge style={{ marginLeft: space.spacing(4) }}>New</Badge>
                 </a>
               </Link>
             </li>
@@ -67,8 +67,8 @@ export const App = ({ children }: any) => {
           max-width: 600px;
           margin-left: auto;
           margin-right: auto;
-          padding-left: ${spacing.large};
-          padding-right: ${spacing.large};
+          padding-left: ${space.spacing(6)};
+          padding-right: ${space.spacing(6)};
         }
 
         h1 {
@@ -78,8 +78,8 @@ export const App = ({ children }: any) => {
         }
 
         h2 {
-          margin-top: ${spacing.default};
-          margin-bottom: ${spacing.xxLarge};
+          margin-top: ${space.spacing(2)};
+          margin-bottom: ${space.spacing(9)};
           font-weight: 400;
           font-size: 16px;
           line-height: 26px;
@@ -87,19 +87,19 @@ export const App = ({ children }: any) => {
         }
 
         nav {
-          margin-bottom: ${spacing.xLarge};
+          margin-bottom: ${space.spacing(7)};
         }
 
         li {
           display: inline-block;
-          margin-right: ${spacing.medium};
+          margin-right: ${space.spacing(4)};
           vertical-align: middle;
         }
 
         a {
           background-color: ${Colors.White_Lilac};
-          border-radius: ${radius.large};
-          padding: ${spacing.default};
+          border-radius: ${Radius.Large};
+          padding: ${space.spacing(2)};
           color: ${Colors.Storm_Gray};
           text-decoration: none;
           display: flex;

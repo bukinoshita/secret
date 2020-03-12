@@ -5,7 +5,7 @@ import Router from 'next/router'
 import { App } from 'layouts/app'
 
 import { Button } from 'ui/button'
-import { spacing } from 'ui/theme'
+import { space } from 'ui/theme'
 import { Textarea } from 'ui/textarea'
 
 import { TYPE } from 'ui/button/button.types'
@@ -59,9 +59,9 @@ const Home = () => {
           display: grid;
           justify-content: end;
           grid-template-columns: 98px 135px;
-          grid-column-gap: ${spacing.medium};
+          grid-column-gap: ${space.spacing(4)};
           align-items: center;
-          margin-top: ${spacing.medium};
+          margin-top: ${space.spacing(4)};
         }
       `}</style>
     </App>

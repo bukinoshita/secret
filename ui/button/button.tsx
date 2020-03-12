@@ -2,7 +2,7 @@ import classnames from 'classnames'
 import React, { PureComponent } from 'react'
 
 import { APPEARANCE, SIZE, TYPE, ButtonProps } from './button.types'
-import { Colors, radius, spacing } from 'ui/theme'
+import { Colors, Radius, space } from 'ui/theme'
 
 export class Button extends PureComponent<ButtonProps> {
   static defaultProps = {
@@ -30,7 +30,6 @@ export class Button extends PureComponent<ButtonProps> {
             text-align: center;
             cursor: pointer;
             border: 1px solid transparent;
-            padding: ${spacing.default} ${spacing.large};
           }
 
           .primary {
@@ -48,8 +47,8 @@ export class Button extends PureComponent<ButtonProps> {
           .medium {
             font-size: 11px;
             line-height: 20px;
-            padding: ${spacing.default} ${spacing.large};
-            border-radius: ${radius.medium};
+            padding: ${space.spacing(2)} ${space.spacing(6)};
+            border-radius: ${Radius.Medium};
           }
         `}</style>
       </button>

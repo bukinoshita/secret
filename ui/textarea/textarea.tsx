@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Colors, radius, spacing } from 'ui/theme'
+import { Colors, Radius, space } from 'ui/theme'
 
 export class Textarea extends PureComponent<any> {
   render() {
@@ -15,11 +15,11 @@ export class Textarea extends PureComponent<any> {
             textarea {
               width: 100%;
               background-color: ${Colors.White_Lilac};
-              border-radius: ${radius.large};
+              border-radius: ${Radius.Large};
               border: none;
               resize: none;
               height: 200px;
-              padding: ${spacing.medium};
+              padding: ${space.spacing(4)};
               font-size: 13px;
               line-height: 20px;
               color: ${Colors.Black};
