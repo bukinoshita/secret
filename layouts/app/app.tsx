@@ -10,7 +10,7 @@ import { Page } from 'layouts/page'
 
 import { Badge } from 'ui/badge'
 import { Colors, Radius, space } from 'ui/theme'
-import { IconCommand, IconCode, IconSlack } from 'ui/icon'
+import { IconLayout, IconTerminal, IconSlack } from 'ui/icon'
 
 export const App = ({ children }: any) => {
   const { asPath } = useRouter()
@@ -33,7 +33,7 @@ export const App = ({ children }: any) => {
             <li>
               <Link href="/">
                 <a className={isActive('/')} href="/">
-                  <IconCommand style={{ marginRight: space.spacing(1) }} />
+                  <IconLayout style={{ marginRight: space.spacing(1) }} />
                   Web
                 </a>
               </Link>
@@ -41,7 +41,7 @@ export const App = ({ children }: any) => {
             <li>
               <Link href="/cli">
                 <a className={isActive('/cli')} href="/cli">
-                  <IconCode style={{ marginRight: space.spacing(1) }} />
+                  <IconTerminal style={{ marginRight: space.spacing(1) }} />
                   Command line
                   <Badge style={{ marginLeft: space.spacing(4) }}>New</Badge>
                 </a>
