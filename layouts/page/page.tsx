@@ -25,7 +25,7 @@ export const Page = ({ children }: any) => {
         }
 
         body {
-          font-family: 'Inter';
+          font-family: 'Inter', sans-serif;
           color: ${Colors.Black};
           font-size: 13px;
         }
