@@ -1,6 +1,8 @@
 export { IconBase } from './icon-base'
+export { IconCheck } from './icon-check'
 export { IconCode } from './icon-code'
 export { IconCommand } from './icon-command'
+export { IconCopy } from './icon-copy'
 export { IconLayout } from './icon-layout'
 export { IconSlack } from './icon-slack'
 export { IconTerminal } from './icon-terminal'
