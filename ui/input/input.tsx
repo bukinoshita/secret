@@ -77,7 +77,7 @@ export const Input = ({
         }
 
         input::placeholder {
-          color: #A8A9BC;
+          color: ${Colors.Spun_Pearl};
         }
 
         :global(.icon-right) {
