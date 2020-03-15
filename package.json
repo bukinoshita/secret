@@ -17,6 +17,7 @@
     "axios": "0.19.2",
     "base64-arraybuffer": "0.2.0",
     "classnames": "2.2.6",
+    "copy-text-to-clipboard": "2.1.1",
     "next": "9.3.0",
     "react": "16.13.0",
     "react-dom": "16.13.0"
