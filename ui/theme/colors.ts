@@ -3,5 +3,6 @@ export enum Colors {
   White = '#ffffff',
   Mountain_Meadown = '#19bca3',
   White_Lilac = '#F4F3FB',
-  Storm_Gray = '#6A6B84'
+  Storm_Gray = '#6A6B84',
+  Trout = '#4B4B60'
 }
