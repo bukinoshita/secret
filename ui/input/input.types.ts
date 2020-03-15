@@ -7,6 +7,7 @@ export enum InputTypes {
 export interface InputProps {
   copyable?: boolean
   disabled?: boolean
+  hint?: string
   id: string
   label?: string
   name: string

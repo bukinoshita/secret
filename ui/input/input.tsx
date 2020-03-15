@@ -4,11 +4,12 @@ import copy from 'copy-text-to-clipboard'
 import { IconCheck, IconCopy } from 'ui/icon'
 import { Colors, Radius, space, Weight } from 'ui/theme'
 
-import { InputTypes } from './input.types'
+import { InputTypes, InputProps } from './input.types'
 
 export const Input = ({
   copyable,
   disabled,
+  hint,
   id,
   label,
   name,
@@ -17,11 +18,11 @@ export const Input = ({
   readOnly,
   type,
   value
-}: any) => {
+}: InputProps) => {
   const [isCopied, handleCopy] = useState(false)
   const onCopy = () => {
     handleCopy(true)
-    copy(value)
+    copy(value || '')
     setTimeout(() => handleCopy(false), 2000)
   }
 
@@ -39,6 +40,8 @@ export const Input = ({
         type={type}
         value={value}
       />
+
+      {hint && <span className="text-field__hint">{hint}</span>}
 
       {copyable && readOnly && isCopied ? (
         <IconCheck className="icon-right icon__check" onClick={onCopy} />
@@ -88,6 +91,14 @@ export const Input = ({
           color: ${Colors.Mountain_Meadown};
           cursor: default;
           pointer-events: none;
+        }
+
+        .text-field__hint {
+          font-size: 11px;
+          font-style: italic;
+          color: ${Colors.Storm_Gray};
+          margin-top: ${space.spacing(1)};
+          display: inline-block;
         }
       `}</style>
     </div>
