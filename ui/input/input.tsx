@@ -44,7 +44,7 @@ export const Input = ({
       {hint && <span className="text-field__hint">{hint}</span>}
 
       {copyable && readOnly && isCopied ? (
-        <IconCheck className="icon-right icon__check" onClick={onCopy} />
+        <IconCheck className="icon-right icon__check" />
       ) : (
         <IconCopy className="icon-right icon__copy" onClick={onCopy} />
       )}
@@ -84,13 +84,10 @@ export const Input = ({
           position: absolute;
           right: 12px;
           top: 31px;
-          cursor: pointer;
         }
 
         :global(.icon__check) {
           color: ${Colors.Mountain_Meadown};
-          cursor: default;
-          pointer-events: none;
         }
 
         .text-field__hint {
