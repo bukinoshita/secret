@@ -34,7 +34,7 @@ const Home = () => {
       cipherText: base64ArrayBuffer.encode(cipherText)
     })
 
-    Router.push(`/secret/${id}/${cipherKey}`)
+    Router.push(`/s/${id}?cipherKey=${cipherKey}`)
   }
 
   return (
