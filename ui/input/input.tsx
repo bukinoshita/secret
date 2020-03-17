@@ -22,7 +22,7 @@ export const Input = ({
   const [isCopied, handleCopy] = useState(false)
   const onCopy = () => {
     handleCopy(true)
-    copy(value || '')
+    copy(value ?? '')
     setTimeout(() => handleCopy(false), 2000)
   }
 
@@ -34,11 +34,11 @@ export const Input = ({
         disabled={disabled}
         id={id}
         name={name}
-        onChange={onChange}
         placeholder={placeholder}
         readOnly={readOnly}
         type={type}
         value={value}
+        onChange={onChange}
       />
 
       {hint && <span className="text-field__hint">{hint}</span>}
@@ -49,7 +49,7 @@ export const Input = ({
         <IconCopy className="icon-right icon__copy" onClick={onCopy} />
       )}
 
-      <style jsx={true}>{`
+      <style jsx>{`
         .text-field {
           position: relative;
         }

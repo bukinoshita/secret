@@ -10,7 +10,7 @@ export const PageTitle = ({ title, subtitle, center }: PageTitleProps) => {
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         h1 {
           font-size: 30px;
           font-weight: ${Weight.Bold};

@@ -14,7 +14,8 @@ import { IconLayout, IconTerminal, IconSlack } from 'ui/icon'
 
 export const App = ({ children }: any) => {
   const { asPath } = useRouter()
-  const isActive = (route: string) => classnames({ 'is-active': asPath === route })
+  const isActive = (route: string) =>
+    classnames({ 'is-active': asPath === route })
 
   return (
     <Page>
@@ -26,7 +27,7 @@ export const App = ({ children }: any) => {
         <link
           href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
 
       <main>
@@ -67,7 +68,7 @@ export const App = ({ children }: any) => {
         {children}
       </main>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         main {
           max-width: 600px;
           margin-left: auto;

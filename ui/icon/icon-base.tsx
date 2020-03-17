@@ -21,7 +21,7 @@ export class IconBase extends PureComponent<IconProps> {
       >
         {children}
 
-        <style jsx={true}>{`
+        <style jsx>{`
           svg {
             cursor: ${onClick ? 'pointer' : 'default'};
             pointer-events: ${onClick ? 'initial' : 'none'};

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Page } from 'layouts/page'
 
 import { PageTitle } from 'components/page-title'
@@ -9,24 +11,24 @@ const S = () => {
   return (
     <Page>
       <PageTitle
+        center
         title="Share your secret"
         subtitle="Safely share your secret without having it stored in any app."
-        center={true}
       />
 
       <section>
         <Input
+          readOnly
+          copyable
           label="Secret URL"
           id="secret"
           name="secret"
-          readOnly={true}
-          copyable={true}
           value={secretURL}
           hint="Anyone with this link can view the secret."
         />
       </section>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         section {
           max-width: 400px;
           margin-left: auto;

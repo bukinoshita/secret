@@ -25,7 +25,10 @@ const Home = () => {
     const {
       cipherText,
       iv
-    }: { cipherText: ArrayBuffer; iv: ArrayBuffer } = await keychain.encryptMessage(key, secret)
+    }: {
+      cipherText: ArrayBuffer
+      iv: ArrayBuffer
+    } = await keychain.encryptMessage(key, secret)
 
     const {
       data: { id }
@@ -41,20 +44,22 @@ const Home = () => {
     <App>
       <form onSubmit={onSubmit}>
         <Textarea
-          placeholder="Write your secret..."
+          placeholder="Write your secret…"
           value={secret}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => onTypeSecret(event.target.value)}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            onTypeSecret(event.target.value)
+          }
         />
 
         <footer>
-          <Button onClick={() => console.log('Options')} outline={true}>
+          <Button outline onClick={() => console.log('Options')}>
             Options
           </Button>
           <Button type={TYPE.SUBMIT}>Create secret</Button>
         </footer>
       </form>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         footer {
           display: grid;
           justify-content: end;

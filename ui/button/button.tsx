@@ -13,7 +13,15 @@ export class Button extends PureComponent<ButtonProps> {
   }
 
   render() {
-    const { children, appearance, outline, type, onClick, size, style } = this.props
+    const {
+      children,
+      appearance,
+      outline,
+      type,
+      onClick,
+      size,
+      style
+    } = this.props
     const className = classnames({
       primary: appearance === APPEARANCE.PRIMARY,
       medium: size === SIZE.MEDIUM,
@@ -24,7 +32,7 @@ export class Button extends PureComponent<ButtonProps> {
       <button className={className} type={type} style={style} onClick={onClick}>
         {children}
 
-        <style jsx={true}>{`
+        <style jsx>{`
           button {
             text-transform: uppercase;
             text-align: center;

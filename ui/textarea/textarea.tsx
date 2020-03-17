@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 
 import { Colors, Radius, space } from 'ui/theme'
 
@@ -7,10 +7,10 @@ export class Textarea extends PureComponent<any> {
     const { onChange, placeholder, value } = this.props
 
     return (
-      <Fragment>
+      <>
         <textarea placeholder={placeholder} value={value} onChange={onChange} />
 
-        <style jsx={true}>
+        <style jsx>
           {`
             textarea {
               width: 100%;
@@ -46,7 +46,7 @@ export class Textarea extends PureComponent<any> {
             }
           `}
         </style>
-      </Fragment>
+      </>
     )
   }
 }
