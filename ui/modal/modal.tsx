@@ -6,6 +6,7 @@ import { ModalProps } from './modal.types'
 
 export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {isOpen && (
         <div className="modal">
@@ -14,7 +15,7 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
 
           <style jsx>{`
             .modal-backdrop {
-              content: '';
+              content: ’’;
               position: fixed;
               top: 0;
               left: 0;
