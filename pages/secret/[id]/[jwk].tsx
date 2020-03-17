@@ -13,23 +13,23 @@ import { Keychain } from 'utils/keychain'
 class Secret extends Component<any, any> {
   keychain: Keychain
 
-  static async getInitialProps({ query }: NextPageContext) {
-    const {
-      data: { iv, cipherText }
-    } = await api(`http://localhost:3001/api/get-secret?id=${query.id}`)
-
-    return { jwk: query.jwk, iv, cipherText }
+  state = {
+    secret: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+    revealed: false
   }
 
   constructor(props: any) {
     super(props)
 
     this.keychain = new Keychain()
+  }
 
-    this.state = {
-      secret: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-      revealed: false
-    }
+  static async getInitialProps({ query }: NextPageContext) {
+    const {
+      data: { iv, cipherText }
+    } = await api(`http://localhost:3001/api/get-secret?id=${query.id}`)
+
+    return { jwk: query.jwk, iv, cipherText }
   }
 
   onRevealSecret = async () => {

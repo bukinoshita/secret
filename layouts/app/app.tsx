@@ -27,7 +27,7 @@ export const App = ({ children }: any) => {
         <link
           href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
 
       <main>

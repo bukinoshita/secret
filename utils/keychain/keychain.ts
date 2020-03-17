@@ -6,7 +6,7 @@ export class Keychain {
     ])
   }
 
-  async importKey(key: string) {
+  async importKey(key: string): Promise<CryptoKey> {
     const jwk: JsonWebKey = {
       alg: 'A256GCM',
       ext: true,
@@ -21,7 +21,7 @@ export class Keychain {
     ])
   }
 
-  async exportKey(key: CryptoKey) {
+  async exportKey(key: CryptoKey): Promise<JsonWebKey> {
     return crypto.subtle.exportKey('jwk', key)
   }
 
