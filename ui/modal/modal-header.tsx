@@ -17,10 +17,11 @@ export const ModalHeader = ({ title, onClose }: ModalHeaderProps) => (
 
     <style jsx>{`
       .modal-header {
-        height: 32px;
+        height: 60px;
         display: flex;
         align-items: center;
-        padding: ${space.spacing(6)};
+        padding-left: ${space.spacing(6)};
+        padding-right: ${space.spacing(6)};
         width: 100%;
         justify-content: space-between;
       }

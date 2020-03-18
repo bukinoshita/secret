@@ -11,7 +11,7 @@ export const ModalFooter = ({ children }: ModalFooterProps) => {
 
       <style jsx>{`
         .modal-footer {
-          height: 68px;
+          height: 60px;
           display: flex;
           align-items: center;
           background-color: ${Colors.White_Lilac};
