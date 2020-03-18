@@ -19,7 +19,7 @@ export const FormField = ({
 
       <div className="form-field--right">{children}</div>
 
-      <style jsx={true}>{`
+      <style jsx>{`
         .form-field {
           display: grid;
           align-items: center;
