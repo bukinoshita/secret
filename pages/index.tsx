@@ -4,10 +4,11 @@ import Router from 'next/router'
 
 import { App } from 'layouts/app'
 
+import { ModalAdvancedOptions } from 'components/modal-advanced-options'
+
 import { Button } from 'ui/button'
 import { space } from 'ui/theme'
 import { Textarea } from 'ui/textarea'
-
 import { TYPE } from 'ui/button/button.types'
 
 import { Keychain } from 'utils/keychain'
@@ -15,6 +16,9 @@ import { api } from 'utils/api'
 
 const Home = () => {
   const [secret, onTypeSecret] = useState<string>('')
+  const [isModalAdvancedOptionsOpen, toggleModalAdvancedOptions] = useState<
+    boolean
+  >(false)
   const keychain = new Keychain()
 
   const onSubmit = async (event: FormEvent) => {
@@ -52,12 +56,17 @@ const Home = () => {
         />
 
         <footer>
-          <Button outline onClick={() => console.log('Options')}>
+          <Button outline onClick={() => toggleModalAdvancedOptions(true)}>
             Options
           </Button>
           <Button type={TYPE.SUBMIT}>Create secret</Button>
         </footer>
       </form>
+
+      <ModalAdvancedOptions
+        isOpen={isModalAdvancedOptionsOpen}
+        onClose={() => toggleModalAdvancedOptions(false)}
+      />
 
       <style jsx>{`
         footer {
