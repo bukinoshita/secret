@@ -1,7 +1,9 @@
 import { ChangeEvent } from 'react'
 
 export enum InputTypes {
-  Text = 'text'
+  Text = 'text',
+  Password = 'password',
+  Email = 'email'
 }
 
 export interface InputProps {
