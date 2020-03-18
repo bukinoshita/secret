@@ -43,11 +43,14 @@ export const Input = ({
 
       {hint && <span className="text-field__hint">{hint}</span>}
 
-      {copyable && readOnly && isCopied ? (
-        <IconCheck className="icon-right icon__check" />
-      ) : (
-        <IconCopy className="icon-right icon__copy" onClick={onCopy} />
-      )}
+      {copyable &&
+        readOnly &&
+        (() =>
+          isCopied ? (
+            <IconCheck className="icon-right icon__check" />
+          ) : (
+            <IconCopy className="icon-right icon__copy" onClick={onCopy} />
+          ))()}
 
       <style jsx>{`
         .text-field {
