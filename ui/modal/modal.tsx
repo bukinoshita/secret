@@ -34,7 +34,7 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
               width: 100%;
               box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.11);
               position: absolute;
-              top: 400px;
+              bottom: calc(100vh - 500px);
             }
           `}</style>
         </div>
