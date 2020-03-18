@@ -11,7 +11,7 @@ export const Switcher = ({ id, isChecked, onChange }: SwitcherProps) => {
       <label htmlFor={id} />
 
       <style jsx>{`
-        input[type='checkbox'] {
+        input {
           height: 0;
           width: 0;
           visibility: hidden;
@@ -30,7 +30,7 @@ export const Switcher = ({ id, isChecked, onChange }: SwitcherProps) => {
         }
 
         label:after {
-          content: '';
+          content: ’’;
           position: absolute;
           top: 1px;
           left: 1px;
