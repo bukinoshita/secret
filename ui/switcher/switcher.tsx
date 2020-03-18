@@ -1,3 +1,5 @@
+/* eslint unicorn/string-content: 0 */
+
 import React from 'react'
 
 import { Colors, Radius } from 'ui/theme'
@@ -30,7 +32,7 @@ export const Switcher = ({ id, isChecked, onChange }: SwitcherProps) => {
         }
 
         label:after {
-          content: ’’;
+          content: '';
           position: absolute;
           top: 1px;
           left: 1px;
