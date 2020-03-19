@@ -20,8 +20,8 @@
     "classnames": "2.2.6",
     "copy-text-to-clipboard": "2.1.1",
     "next": "9.3.1",
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@now/node": "1.4.1",
@@ -35,7 +35,7 @@
     "eslint-config-xo-react": "0.23.0",
     "eslint-config-xo-typescript": "0.26.0",
     "eslint-plugin-react": "7.19.0",
-    "eslint-plugin-react-hooks": "2.5.0",
+    "eslint-plugin-react-hooks": "2.5.1",
     "now": "17.0.4",
     "typescript": "3.8.3",
     "xo": "0.28.0"
