@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react'
-import base64ArrayBuffer from 'base64-arraybuffer'
 import Router from 'next/router'
 
 import { App } from 'layouts/app'
@@ -11,35 +10,24 @@ import { space } from 'ui/theme'
 import { Textarea } from 'ui/textarea'
 import { TYPE } from 'ui/button/button.types'
 
-import { Keychain } from 'utils/keychain'
+import { useEncrypt } from 'hooks/use-keychain'
+
 import { api } from 'utils/api'
 
 const Home = () => {
+  const [encrypt] = useEncrypt()
   const [secret, onTypeSecret] = useState<string>('')
   const [isModalAdvancedOptionsOpen, toggleModalAdvancedOptions] = useState<
     boolean
   >(false)
-  const keychain = new Keychain()
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault()
 
-    const key: CryptoKey = await keychain.generateKey()
-    const { k: cipherKey }: JsonWebKey = await keychain.exportKey(key)
-    const {
-      cipherText,
-      iv
-    }: {
-      cipherText: ArrayBuffer
-      iv: ArrayBuffer
-    } = await keychain.encryptMessage(key, secret)
-
+    const { iv, cipherText, cipherKey } = await encrypt(secret)
     const {
       data: { id }
-    } = await api.post('/api/create-secret', {
-      iv: base64ArrayBuffer.encode(iv),
-      cipherText: base64ArrayBuffer.encode(cipherText)
-    })
+    } = await api.post('/api/create-secret', { iv, cipherText })
 
     Router.push(`/s/${id}?cipherKey=${cipherKey}`)
   }
