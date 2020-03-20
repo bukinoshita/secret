@@ -5,10 +5,11 @@ import { App } from 'layouts/app'
 
 import { PageTitle } from 'components/page-title'
 import { Input } from 'ui/input'
+import { NextPageContext } from 'next'
 
-const S = () => {
+const S = ({ host }: any) => {
   const { query } = useRouter()
-  const secretURL = `https://getsecret.now.sh/secret/${query.id}/${query.cipherKey}`
+  const secretURL = `${host}/secret/${query.id}/${query.cipherKey}`
 
   return (
     <App>
@@ -39,6 +40,14 @@ const S = () => {
       `}</style>
     </App>
   )
+}
+
+export async function getServerSideProps(context: NextPageContext) {
+  return {
+    props: {
+      host: context?.req?.headers?.host
+    }
+  }
 }
 
 export default S
