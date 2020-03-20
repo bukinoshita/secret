@@ -55,6 +55,7 @@ export const Input = ({
       <style jsx>{`
         .text-field {
           position: relative;
+          text-align: left;
         }
 
         label {
@@ -63,6 +64,7 @@ export const Input = ({
           color: ${Colors.Trout};
           margin-bottom: ${space.spacing(1)};
           display: inline-block;
+          text-align: left;
         }
         
         input {
@@ -71,7 +73,10 @@ export const Input = ({
           font-size: 13px;
           line-height: 20px;
           color: ${Colors.Storm_Gray};
-          padding: ${space.spacing(2)};
+          padding-top: ${space.spacing(2)};
+          padding-bottom: ${space.spacing(2)};
+          padding-left: ${space.spacing(2)};
+          padding-right: ${copyable ? space.spacing(10) : space.spacing(2)};
           background-color: ${Colors.White_Lilac};
           border none;
           outline: none;
