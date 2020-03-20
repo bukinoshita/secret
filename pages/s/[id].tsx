@@ -1,11 +1,13 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { App } from 'layouts/app'
 
 import { PageTitle } from 'components/page-title'
 import { Input } from 'ui/input'
 
-const S = ({ url: { query } }: any) => {
+const S = () => {
+  const { query } = useRouter()
   const secretURL = `https://getsecret.now.sh/secret/${query.id}/${query.cipherKey}`
 
   return (
