@@ -19,6 +19,7 @@ import { PageTitle } from 'components/page-title'
 import pkg from '../package.json'
 
 const Home = () => {
+  const [pwd, setPwd] = useState<string>('')
   const [encrypt] = useEncrypt()
   const [secret, onTypeSecret] = useState<string>('')
   const [isModalAdvancedOptionsOpen, toggleModalAdvancedOptions] = useState<
@@ -31,9 +32,16 @@ const Home = () => {
     const { iv, cipherText, cipherKey } = await encrypt(secret)
     const {
       data: { id }
-    } = await api.post('/api/create-secret', { iv, cipherText })
+    } = await api.post('/api/create-secret', { iv, cipherText, pwd })
 
-    Router.push(`/s/${id}?cipherKey=${cipherKey}`)
+    const URL = `/s/${id}?cipherKey=${cipherKey}`
+    const redirectURL = pwd ? `${URL}?pwd=1` : URL
+
+    Router.push(redirectURL)
+  }
+
+  const onApplyOptions = (payload: { password?: string }) => {
+    setPwd(payload?.password ?? '')
   }
 
   return (
@@ -62,6 +70,7 @@ const Home = () => {
       <ModalAdvancedOptions
         isOpen={isModalAdvancedOptionsOpen}
         onClose={() => toggleModalAdvancedOptions(false)}
+        onApply={onApplyOptions}
       />
 
       <style jsx>{`

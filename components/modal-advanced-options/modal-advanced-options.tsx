@@ -7,12 +7,18 @@ import { space } from 'ui/theme'
 import { Switcher } from 'ui/switcher'
 import { Input, InputTypes } from 'ui/input'
 
-export const ModalAdvancedOptions = ({ isOpen, onClose }: any) => {
+export const ModalAdvancedOptions = ({ isOpen, onClose, onApply }: any) => {
   const [isPasswordProtectionOn, setPasswordProtection] = useState<boolean>(
     false
   )
   const [isSendToEmailOn, setSendToEmail] = useState<boolean>(false)
   const [password, setPassword] = useState<string>('')
+
+  const handleApplyOptions = () => {
+    const payload = { password }
+    onApply(payload)
+    onClose()
+  }
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -66,7 +72,7 @@ export const ModalAdvancedOptions = ({ isOpen, onClose }: any) => {
       </ModalContent>
 
       <ModalFooter>
-        <Button onClick={onClose}>Apply</Button>
+        <Button onClick={handleApplyOptions}>Apply</Button>
       </ModalFooter>
 
       <style jsx>{`
