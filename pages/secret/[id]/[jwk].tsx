@@ -51,7 +51,7 @@ const Secret = ({ id, jwk, pwd }: any) => {
                 label="Passphrase"
                 id="passphrase"
                 name="passphrase"
-                placeholder="Passphrase to reveal secret..."
+                placeholder="Passphrase to reveal secret…"
                 type={InputTypes.Password}
                 value={password}
                 onChange={(event?: ChangeEvent<HTMLInputElement>) =>
