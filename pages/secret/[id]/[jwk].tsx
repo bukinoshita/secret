@@ -1,15 +1,17 @@
 import { NextPageContext } from 'next'
 import React, { useState, ChangeEvent } from 'react'
 
-import { Page } from 'layouts/page'
+import { App } from 'layouts/app'
+
+import { PageTitle } from 'components/page-title'
+
+import { Button } from 'ui/button'
+import { Input, InputTypes } from 'ui/input'
+import { space } from 'ui/theme'
 
 import { useDecrypt } from 'hooks/use-keychain'
 
 import { api } from 'utils/api'
-import { PageTitle } from 'components/page-title'
-import { Button } from 'ui/button'
-import { Input, InputTypes } from 'ui/input'
-import { space } from 'ui/theme'
 
 const Secret = ({ id, jwk, pwd }: any) => {
   const [decrypt] = useDecrypt()
@@ -34,7 +36,7 @@ const Secret = ({ id, jwk, pwd }: any) => {
   }
 
   return (
-    <Page>
+    <App>
       <PageTitle
         center
         title="Time to reveal the secret"
@@ -102,7 +104,7 @@ const Secret = ({ id, jwk, pwd }: any) => {
           margin-right: auto;
         }
       `}</style>
-    </Page>
+    </App>
   )
 }
 

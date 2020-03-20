@@ -4,6 +4,7 @@ import Router from 'next/router'
 import { App } from 'layouts/app'
 
 import { ModalAdvancedOptions } from 'components/modal-advanced-options'
+import { Navigation } from 'components/navigation'
 
 import { Button } from 'ui/button'
 import { space } from 'ui/theme'
@@ -13,6 +14,9 @@ import { TYPE } from 'ui/button/button.types'
 import { useEncrypt } from 'hooks/use-keychain'
 
 import { api } from 'utils/api'
+import { PageTitle } from 'components/page-title'
+
+import pkg from '../package.json'
 
 const Home = () => {
   const [encrypt] = useEncrypt()
@@ -34,6 +38,10 @@ const Home = () => {
 
   return (
     <App>
+      <PageTitle title={pkg.name} subtitle={pkg.description} />
+
+      <Navigation />
+
       <form onSubmit={onSubmit}>
         <Textarea
           placeholder="Write your secret…"
