@@ -1,84 +1,115 @@
 import { NextPageContext } from 'next'
-import base64ArrayBuffer from 'base64-arraybuffer'
-import classnames from 'classnames'
-import React, { Component } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 
 import { Page } from 'layouts/page'
 
-import { Button } from 'ui/button'
+import { useDecrypt } from 'hooks/use-keychain'
 
 import { api } from 'utils/api'
-import { Keychain } from 'utils/keychain'
+import { PageTitle } from 'components/page-title'
+import { Button } from 'ui/button'
+import { Input, InputTypes } from 'ui/input'
+import { space } from 'ui/theme'
 
-class Secret extends Component<any, any> {
-  keychain: Keychain
+const Secret = ({ id, jwk, pwd }: any) => {
+  const [decrypt] = useDecrypt()
+  const [isRevealed, reveal] = useState(false)
+  const [password, setPassword] = useState('')
+  const [secret, setSecret] = useState(
+    'send a message through a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.'
+  )
 
-  state = {
-    secret: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-    revealed: false
+  const onReveal = async () => {
+    try {
+      const {
+        data: { iv, cipherText }
+      } = await api(`http://localhost:3000/api/get-secret?id=${id}`)
+      const mySecret = await decrypt(iv, cipherText, jwk)
+
+      setSecret(mySecret)
+      reveal(true)
+    } catch (error) {
+      console.error({ error })
+    }
   }
 
-  constructor(props: any) {
-    super(props)
+  return (
+    <Page>
+      <PageTitle
+        center
+        title="Time to reveal the secret"
+        subtitle="Safely share your secret without having it stored in any app."
+      />
 
-    this.keychain = new Keychain()
-  }
+      <section>
+        <h2>{secret}</h2>
 
-  static async getInitialProps({ query }: NextPageContext) {
-    const {
-      data: { iv, cipherText }
-    } = await api(`http://localhost:3001/api/get-secret?id=${query.id}`)
-
-    return { jwk: query.jwk, iv, cipherText }
-  }
-
-  onRevealSecret = async () => {
-    const { iv: base64Iv, cipherText: base64CipherText, jwk } = this.props
-    const key = await this.keychain.importKey(jwk)
-    const iv = base64ArrayBuffer.decode(base64Iv)
-    const cipherText = base64ArrayBuffer.decode(base64CipherText)
-    const secret = await this.keychain.decryptMessage(key, iv, cipherText)
-
-    this.setState({ secret, revealed: true })
-  }
-
-  render() {
-    const { secret, revealed } = this.state
-    const className = classnames({ revealed })
-
-    return (
-      <Page>
-        <section>
+        {!isRevealed && (
           <div>
-            <h1 className={className}>{secret}</h1>
-            <Button onClick={this.onRevealSecret}>Reveal secret</Button>
+            {pwd && (
+              <Input
+                label="Passphrase"
+                id="passphrase"
+                name="passphrase"
+                placeholder="Passphrase to reveal secret..."
+                type={InputTypes.Password}
+                value={password}
+                onChange={(event?: ChangeEvent<HTMLInputElement>) =>
+                  setPassword(event?.target?.value ?? '')
+                }
+              />
+            )}
+
+            <Button onClick={onReveal}>Revel the secret</Button>
           </div>
-        </section>
+        )}
+      </section>
 
-        <style jsx>{`
-          section {
-            text-align: center;
-            margin-top: 240px;
-          }
+      <style jsx>{`
+        section {
+          text-align: center;
+          position: relative;
+          margin-top: ${space.spacing(14)};
+        }
 
-          h1 {
-            font-weight: 400;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 26px;
-            margin-bottom: 40px;
-            filter: blur(6px);
-            min-height: 100px;
-          }
+        h2 {
+          font-weight: 400;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 20px;
+          line-height: 34px;
+          filter: ${isRevealed ? 'blur(0)' : 'blur(10px)'};
+          min-height: 100px;
+          pointer-events: none;
+          user-select: none;
+          word-break: break-all;
+        }
 
-          .revealed {
-            filter: blur(0);
-          }
-        `}</style>
-      </Page>
-    )
-  }
+        div {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: ${pwd ? 0 : '15px'};
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        :global(.primary) {
+          margin-top: ${space.spacing(4)};
+          margin-left: auto;
+          margin-right: auto;
+        }
+      `}</style>
+    </Page>
+  )
+}
+
+Secret.getInitialProps = async ({
+  query: { jwk, id, pwd }
+}: NextPageContext) => {
+  return { jwk, id, pwd }
 }
 
 export default Secret
