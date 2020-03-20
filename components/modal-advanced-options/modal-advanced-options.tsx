@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 
 import { Button } from 'ui/button'
 import { FormField } from 'ui/form-field'
@@ -12,6 +12,7 @@ export const ModalAdvancedOptions = ({ isOpen, onClose }: any) => {
     false
   )
   const [isSendToEmailOn, setSendToEmail] = useState<boolean>(false)
+  const [password, setPassword] = useState<string>('')
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -35,6 +36,10 @@ export const ModalAdvancedOptions = ({ isOpen, onClose }: any) => {
             name="password"
             type={InputTypes.Password}
             placeholder="Type your password…"
+            value={password}
+            onChange={(event?: ChangeEvent<HTMLInputElement>) =>
+              setPassword(event?.target?.value ?? '')
+            }
           />
         )}
 
