@@ -10,7 +10,7 @@ import { NextPageContext } from 'next'
 const S = ({ host }: any) => {
   const { query } = useRouter()
   const secretURL = `${host}/secret/${query.id}/${query.cipherKey}`
-  const hasPwd = query && query.cipherKey && query.cipherKey.includes('pwd=1')
+  const hasPwd = query?.cipherKey?.includes('pwd=1')
 
   return (
     <App>
