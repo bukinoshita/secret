@@ -30,11 +30,16 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
               z-index: ${ZIndex.Dialog};
               background-color: ${Colors.White};
               border-radius: ${Radius.Large};
-              max-width: 550px;
               width: 100%;
               box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.11);
               position: absolute;
-              bottom: calc(100vh - 500px);
+              top: calc(100vh - 70%);
+              width: 550px;
+              max-width: 90%;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+              margin-right: auto;
             }
           `}</style>
         </div>
