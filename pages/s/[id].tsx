@@ -5,8 +5,8 @@ import { Page } from 'layouts/page'
 import { PageTitle } from 'components/page-title'
 import { Input } from 'ui/input'
 
-const S = () => {
-  const secretURL = `https://getsecret.now.sh/secret/ekjweniew93enkjdnw2nksa`
+const S = ({ url: { query } }: any) => {
+  const secretURL = `https://getsecret.now.sh/secret/${query.id}/${query.cipherKey}`
 
   return (
     <Page>
