@@ -83,6 +83,7 @@ const Home = () => {
           grid-column-gap: ${space.spacing(4)};
           align-items: center;
           margin-top: ${space.spacing(4)};
+          white-space: nowrap;
         }
       `}</style>
     </App>
