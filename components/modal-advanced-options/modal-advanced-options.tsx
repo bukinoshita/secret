@@ -13,6 +13,7 @@ export const ModalAdvancedOptions = ({ isOpen, onClose, onApply }: any) => {
   )
   const [isSendToEmailOn, setSendToEmail] = useState<boolean>(false)
   const [password, setPassword] = useState<string>('')
+  const canApply = isPasswordProtectionOn && password.length === 0
 
   const handleApplyOptions = () => {
     const payload = { password }
@@ -72,7 +73,9 @@ export const ModalAdvancedOptions = ({ isOpen, onClose, onApply }: any) => {
       </ModalContent>
 
       <ModalFooter>
-        <Button onClick={handleApplyOptions}>Apply</Button>
+        <Button disabled={canApply} onClick={handleApplyOptions}>
+          Apply
+        </Button>
       </ModalFooter>
 
       <style jsx>{`
