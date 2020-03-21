@@ -63,7 +63,9 @@ const Home = () => {
           <Button outline onClick={() => toggleModalAdvancedOptions(true)}>
             Options
           </Button>
-          <Button type={TYPE.SUBMIT}>Create secret</Button>
+          <Button type={TYPE.SUBMIT} disabled={secret.length === 0}>
+            Create secret
+          </Button>
         </footer>
       </form>
 
