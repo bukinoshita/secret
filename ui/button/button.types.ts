@@ -15,9 +15,10 @@ export enum TYPE {
 
 export interface ButtonProps {
   appearance?: APPEARANCE
+  disabled?: boolean
+  onClick?: () => void
   outline?: boolean
   size?: SIZE
-  type?: TYPE
   style?: CSSProperties
-  onClick?: () => void
+  type?: TYPE
 }

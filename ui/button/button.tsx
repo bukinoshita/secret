@@ -7,6 +7,7 @@ import { Colors, Radius, space } from 'ui/theme'
 export class Button extends PureComponent<ButtonProps> {
   static defaultProps = {
     appearance: APPEARANCE.PRIMARY,
+    disabled: false,
     outline: false,
     size: SIZE.MEDIUM,
     type: TYPE.BUTTON
@@ -14,22 +15,30 @@ export class Button extends PureComponent<ButtonProps> {
 
   render() {
     const {
-      children,
       appearance,
-      outline,
-      type,
+      children,
+      disabled,
       onClick,
+      outline,
       size,
-      style
+      style,
+      type
     } = this.props
     const className = classnames({
-      primary: appearance === APPEARANCE.PRIMARY,
+      disabled,
       medium: size === SIZE.MEDIUM,
-      outline
+      outline,
+      primary: appearance === APPEARANCE.PRIMARY
     })
 
     return (
-      <button className={className} type={type} style={style} onClick={onClick}>
+      <button
+        className={className}
+        type={type}
+        style={style}
+        disabled={disabled}
+        onClick={onClick}
+      >
         {children}
 
         <style jsx>{`
@@ -57,6 +66,13 @@ export class Button extends PureComponent<ButtonProps> {
             line-height: 20px;
             padding: ${space.spacing(2)} ${space.spacing(6)};
             border-radius: ${Radius.Medium};
+          }
+
+          .disabled {
+            opacity: 0.5;
+            cursor: default;
+            user-select: none;
+            pointer-events: none;
           }
         `}</style>
       </button>
