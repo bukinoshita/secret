@@ -73,7 +73,7 @@ export const ModalAdvancedOptions = ({ isOpen, onClose, onApply }: any) => {
       </ModalContent>
 
       <ModalFooter>
-        <Button onClick={handleApplyOptions} disabled={canApply}>
+        <Button disabled={canApply} onClick={handleApplyOptions}>
           Apply
         </Button>
       </ModalFooter>
