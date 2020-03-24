@@ -33,7 +33,7 @@
     "@typescript-eslint/parser": "2.25.0",
     "babel-plugin-module-resolver": "4.0.0",
     "eslint-config-xo-react": "0.23.0",
-    "eslint-config-xo-typescript": "0.26.0",
+    "eslint-config-xo-typescript": "0.27.0",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "2.5.1",
     "now": "17.1.1",
