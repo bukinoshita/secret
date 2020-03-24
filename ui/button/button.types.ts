@@ -1,24 +1,24 @@
 import { CSSProperties } from 'react'
 
-export enum APPEARANCE {
-  PRIMARY = 'primary'
+export enum Appearance {
+  Primary = 'primary'
 }
 
-export enum SIZE {
-  MEDIUM = 'medium'
+export enum Size {
+  Medium = 'medium'
 }
 
-export enum TYPE {
-  BUTTON = 'button',
-  SUBMIT = 'submit'
+export enum Type {
+  Button = 'button',
+  Submit = 'submit'
 }
 
 export interface ButtonProps {
-  appearance?: APPEARANCE
+  appearance?: Appearance
   disabled?: boolean
   onClick?: () => void
   outline?: boolean
-  size?: SIZE
+  size?: Size
   style?: CSSProperties
-  type?: TYPE
+  type?: Type
 }

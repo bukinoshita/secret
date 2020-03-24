@@ -1,16 +1,16 @@
 import classnames from 'classnames'
 import React, { PureComponent } from 'react'
 
-import { APPEARANCE, SIZE, TYPE, ButtonProps } from './button.types'
+import { Appearance, Size, Type, ButtonProps } from './button.types'
 import { Colors, Radius, space } from 'ui/theme'
 
 export class Button extends PureComponent<ButtonProps> {
   static defaultProps = {
-    appearance: APPEARANCE.PRIMARY,
+    appearance: Appearance.Primary,
     disabled: false,
     outline: false,
-    size: SIZE.MEDIUM,
-    type: TYPE.BUTTON
+    size: Size.Medium,
+    type: Type.Button
   }
 
   render() {
@@ -26,9 +26,9 @@ export class Button extends PureComponent<ButtonProps> {
     } = this.props
     const className = classnames({
       disabled,
-      medium: size === SIZE.MEDIUM,
+      medium: size === Size.Medium,
       outline,
-      primary: appearance === APPEARANCE.PRIMARY
+      primary: appearance === Appearance.Primary
     })
 
     return (
