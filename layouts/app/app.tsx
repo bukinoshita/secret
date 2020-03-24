@@ -15,6 +15,8 @@ export const App = ({ children }: any) => {
           {pkg.name} | {pkg.description}
         </title>
 
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+
         <link
           href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap"
           rel="stylesheet"
