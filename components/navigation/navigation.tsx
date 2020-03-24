@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Badge } from 'ui/badge'
 import { IconLayout, IconTerminal, IconSlack } from 'ui/icon'
-import { Colors, Radius, space } from 'ui/theme'
+import { Colors, Radius, Responsive, space } from 'ui/theme'
 
 export const Navigation = () => {
   const { asPath } = useRouter()
@@ -46,6 +46,7 @@ export const Navigation = () => {
       <style jsx>{`
         nav {
           margin-bottom: ${space.spacing(7)};
+          display: none;
         }
 
         li {
@@ -68,6 +69,12 @@ export const Navigation = () => {
         .is-active {
           background-color: ${Colors.Black};
           color: ${Colors.White};
+        }
+
+        @media ${Responsive.Small} {
+          nav {
+            display: block;
+          }
         }
       `}</style>
     </nav>
