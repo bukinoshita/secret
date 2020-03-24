@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Colors, ZIndex, Radius } from 'ui/theme'
+import { Colors, ZIndex, Radius, Responsive } from 'ui/theme'
 
 import { ModalProps } from './modal.types'
 
@@ -33,13 +33,19 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
               width: 100%;
               box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.11);
               position: absolute;
-              top: calc(100vh - 70%);
+              top: 100px;
               width: 550px;
               max-width: 90%;
               left: 0;
               right: 0;
               margin-left: auto;
               margin-right: auto;
+            }
+
+            @media ${Responsive.Small} {
+              .dialog {
+                top: calc(100vh - 70%);
+              }
             }
           `}</style>
         </div>
