@@ -9,7 +9,7 @@ import { Navigation } from 'components/navigation'
 import { Button } from 'ui/button'
 import { space } from 'ui/theme'
 import { Textarea } from 'ui/textarea'
-import { TYPE } from 'ui/button/button.types'
+import { Type } from 'ui/button/button.types'
 
 import { useEncrypt } from 'hooks/use-keychain'
 
@@ -63,7 +63,7 @@ const Home = () => {
           <Button outline onClick={() => toggleModalAdvancedOptions(true)}>
             Options
           </Button>
-          <Button type={TYPE.SUBMIT} disabled={secret.length === 0}>
+          <Button type={Type.Submit} disabled={secret.length === 0}>
             Create secret
           </Button>
         </footer>
