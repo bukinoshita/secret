@@ -1,27 +1,41 @@
 import React, { PureComponent } from 'react'
+import classnames from 'classnames'
 
-import { Colors, Radius, space } from 'ui/theme'
+import { Colors, Radius, space, Weight } from 'ui/theme'
 
-export class Badge extends PureComponent<any> {
+import { BadgeProps, Appearance } from './badge.types'
+export class Badge extends PureComponent<BadgeProps> {
+  static defaultProps = {
+    appearance: Appearance.Green
+  }
+
   render() {
-    const { children, style } = this.props
+    const { appearance, children, style } = this.props
+
+    const className = classnames({
+      green: appearance === Appearance.Green
+    })
 
     return (
-      <span style={style}>
+      <span className={className} style={style}>
         {children}
 
         <style jsx>{`
           span {
-            color: ${Colors.White};
-            background-color: ${Colors.Mountain_Meadown};
+            background-color: transparent;
             text-transform: uppercase;
             padding: ${space.spacing(1)} ${space.spacing(2)};
             border-radius: ${Radius.Medium};
             font-size: 10px;
             line-height: 10px;
             text-align: center;
-            font-weight: 500;
+            font-weight: ${Weight.Bold};
             vertical-align: middle;
+          }
+
+          .green {
+            background-color: ${Colors.Mint_Green};
+            color: ${Colors.Black};
           }
         `}</style>
       </span>

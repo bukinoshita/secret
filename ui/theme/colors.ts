@@ -6,5 +6,6 @@ export enum Colors {
   Storm_Gray = '#6A6B84',
   Trout = '#4B4B60',
   Spun_Pearl = '#A8A9BC',
-  Sirocco = '#767777'
+  Sirocco = '#767777',
+  Mint_Green = '#a1fcac'
 }
