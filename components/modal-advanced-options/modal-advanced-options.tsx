@@ -7,7 +7,13 @@ import { space } from 'ui/theme'
 import { Switcher } from 'ui/switcher'
 import { Input, InputTypes } from 'ui/input'
 
-export const ModalAdvancedOptions = ({ isOpen, onClose, onApply }: any) => {
+import { ModalAdvancedOptionsProps } from './modal-advanced-options.types'
+
+export const ModalAdvancedOptions = ({
+  isOpen,
+  onClose,
+  onApply
+}: ModalAdvancedOptionsProps) => {
   const [isPasswordProtectionOn, setPasswordProtection] = useState<boolean>(
     false
   )
