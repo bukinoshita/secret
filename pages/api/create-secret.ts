@@ -1,12 +1,17 @@
 import { NowRequest, NowResponse } from '@now/node'
 
+import { api } from 'utils/api'
+
 export default async (request: NowRequest, response: NowResponse) => {
-  const { iv, cipherText } = request.body
-  // const {
-  //   data: { id }
-  // } = await api.post('http://localhost:3000/api/secret/create', { iv, cipherText })
+  const { iv, cipherText, pwd } = request.body
+  console.log(process.env.API_URL)
+  const {
+    data: { id }
+  } = await api.post(`${process.env.API_URL}/api/secret/create`, {
+    iv,
+    cipherText,
+    pwd
+  })
 
-  console.log({ iv, cipherText })
-
-  response.status(201).send({ id: 'ec9c6ec0-2c30-47e2-b001-52e1fbf1ed0f' })
+  response.status(201).send({ id })
 }

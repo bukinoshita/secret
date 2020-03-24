@@ -25,7 +25,7 @@ const Secret = ({ id, jwk, pwd }: any) => {
     try {
       const {
         data: { iv, cipherText }
-      } = await api(`http://localhost:3000/api/get-secret?id=${id}`)
+      } = await api(`/api/get-secret?id=${id}&password=${password}`)
       const mySecret = await decrypt(iv, cipherText, jwk)
 
       setSecret(mySecret)
