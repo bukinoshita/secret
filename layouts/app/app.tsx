@@ -15,6 +15,9 @@ export const App = ({ children }: any) => {
           {pkg.name} | {pkg.description}
         </title>
 
+        <link rel="apple-touch-icon" href="static/icon.png" />
+        <link rel="icon" href="static/icon.png" type="image/png" />
+
         <meta name="viewport" content="width=device-width, user-scalable=no" />
 
         <link
