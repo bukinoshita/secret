@@ -920,10 +920,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bukinoshita/space@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.1.tgz#4383dea294185a8bb3e15b163f243e0047f01899"
-  integrity sha512-Q4He4ngof3/mnhJ5SQwyAcDEVTvkcFcZFsHM8B3yXoFdctW7JRXmNQ1JFEq4+xvBpdyanATvyPpU0U45iCaqzg==
+"@bukinoshita/space@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.2.tgz#3717beec957d12fae237eab1ecb48faf60690880"
+  integrity sha512-T5dUs3nNjoosJMpRC2ueHEumSYeNjksn1IhL4vZEL+13PnF87SLIK1qKXz+QYDRG/+lTk3B1Jk1xV5d3y/v+CQ==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
