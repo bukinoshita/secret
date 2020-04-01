@@ -1054,10 +1054,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.9.26":
-  version "16.9.26"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.26.tgz#1e55803e468f5393413e29033538cc9aaed6cec9"
-  integrity sha512-dGuSM+B0Pq1MKXYUMlUQWeS6Jj9IhSAUf9v8Ikaimj+YhkBcQrihWBkmyEhK/1fzkJTwZQkhZp5YhmWa2CH+Rw==
+"@types/react@16.9.31":
+  version "16.9.31"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.31.tgz#6a543529766c8934ec8a89667376c2e73e9e2636"
+  integrity sha512-NpYJpNMWScFXtx3A2BJMeew2G3+9SEslVWMdxNJ6DLvxIuxWjY1bizK9q5Y1ujhln31vtjmhjOAYDr9Xx3k9FQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
