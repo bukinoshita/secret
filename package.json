@@ -19,7 +19,7 @@
     "base64-arraybuffer": "0.2.0",
     "classnames": "2.2.6",
     "copy-text-to-clipboard": "2.2.0",
-    "next": "9.3.4",
+    "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
