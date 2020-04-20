@@ -936,10 +936,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bukinoshita/space@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.2.tgz#3717beec957d12fae237eab1ecb48faf60690880"
-  integrity sha512-T5dUs3nNjoosJMpRC2ueHEumSYeNjksn1IhL4vZEL+13PnF87SLIK1qKXz+QYDRG/+lTk3B1Jk1xV5d3y/v+CQ==
+"@bukinoshita/space@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.3.tgz#9c4351175e2ff81d4fe9b52a6b66411ba2ad166e"
+  integrity sha512-3td8KPCjZclVyQyfm9YgeqySoagfslkGB3hGxfpfhWfqQ2T59r5NU8RJ0R3i5YmkiQj/4uWux8GsNxV+N3KZVA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
