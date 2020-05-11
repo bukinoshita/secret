@@ -54,7 +54,8 @@
       "react/button-has-type": 0,
       "import/extensions": 0,
       "capitalized-comments": 0,
-      "@typescript-eslint/restrict-template-expressions": 0
+      "@typescript-eslint/restrict-template-expressions": 0,
+      "@typescript-eslint/prefer-readonly-parameter-types": 0
     }
   }
 }
