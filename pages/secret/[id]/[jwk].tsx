@@ -62,7 +62,7 @@ const Secret = ({ id, jwk, pwd }: any) => {
               />
             )}
 
-            <Button onClick={onReveal}>Revel the secret</Button>
+            <Button onClick={onReveal}>Reveal the secret</Button>
           </div>
         )}
       </section>
