@@ -9,11 +9,9 @@ api.interceptors.response.use(
     return response
   },
   async (error: AxiosError) => {
-    if (error.response && error.response.data) {
-      return Promise.reject(error.response.data.error)
-    }
-
-    return Promise.reject(error)
+    return error?.response?.data?.error
+      ? Promise.reject(error.response.data.error)
+      : Promise.reject(error)
   }
 )
 

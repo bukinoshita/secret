@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "test": "xo --prettier"
+    "lint": "xo --prettier"
   },
   "dependencies": {
     "@bukinoshita/space": "0.0.5",
