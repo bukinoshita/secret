@@ -1127,10 +1127,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bukinoshita/space@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.5.tgz#c0e64ff1e7c6094495b7c71c79d86217cf5d77d0"
-  integrity sha512-HQ+0tmgx4vCWNqyeXdIBMkLwekE7LDcWxFfL488V/yqi0qChj8DZctoBLFaNfoLu0kBQNg2Vqf3SG8LdUR62YA==
+"@bukinoshita/space@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@bukinoshita/space/-/space-0.0.6.tgz#930c9217e7b98e37de254e3c3e29f50cc503b6c0"
+  integrity sha512-O7uGcYBBAHQtRgYdBxl/jaz9hXN14NVFqM0aUms53tLIjI+QT9aQ/Yc89IjqKAMoeDb+ofUvoL6hXAjEEL+D4g==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
