@@ -1,7 +1,7 @@
 import { NowRequest, NowResponse } from '@now/node'
 import { api } from 'utils/api'
 
-export default async (
+const getSecret = async (
   request: NowRequest,
   response: NowResponse
 ): Promise<void> => {
@@ -14,3 +14,5 @@ export default async (
 
   response.status(201).send({ iv, cipherText })
 }
+
+export default getSecret

@@ -2,7 +2,7 @@ import { NowRequest, NowResponse } from '@now/node'
 
 import { api } from 'utils/api'
 
-export default async (request: NowRequest, response: NowResponse) => {
+const createSecret = async (request: NowRequest, response: NowResponse) => {
   const { iv, cipherText, pwd } = request.body
   console.log(process.env.API_URL)
   const {
@@ -15,3 +15,5 @@ export default async (request: NowRequest, response: NowResponse) => {
 
   response.status(201).send({ id })
 }
+
+export default createSecret
