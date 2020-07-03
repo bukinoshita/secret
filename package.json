@@ -38,7 +38,7 @@
     "eslint-plugin-react-hooks": "4.0.5",
     "now": "19.1.1",
     "typescript": "3.9.6",
-    "xo": "0.32.0"
+    "xo": "0.32.1"
   },
   "xo": {
     "extends": "xo-react",
