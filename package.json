@@ -36,7 +36,7 @@
     "eslint-config-xo-typescript": "0.31.0",
     "eslint-plugin-react": "7.20.3",
     "eslint-plugin-react-hooks": "4.0.5",
-    "now": "19.1.1",
+    "now": "19.1.2",
     "typescript": "3.9.6",
     "xo": "0.32.0"
   },
