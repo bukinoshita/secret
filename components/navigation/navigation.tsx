@@ -3,8 +3,7 @@ import classnames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 
-import { Badge } from 'ui/badge'
-import { IconLayout, IconTerminal, IconSlack } from 'ui/icon'
+import { IconLayout } from 'ui/icon'
 import { Colors, Radius, Responsive, space } from 'ui/theme'
 
 export const Navigation = () => {
@@ -23,6 +22,7 @@ export const Navigation = () => {
             </a>
           </Link>
         </li>
+        {/*
         <li>
           <Link href="/cli">
             <a className={isActive('/cli')} href="/cli">
@@ -41,6 +41,7 @@ export const Navigation = () => {
             </a>
           </Link>
         </li>
+         */}
       </ul>
 
       <style jsx>{`
