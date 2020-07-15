@@ -17,15 +17,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": ".",
-    "paths": {
-      "components": ["./components/*"],
-      "hooks": ["./hooks/*"],
-      "layouts": ["./layouts/*"],
-      "pages": ["./pages/*"],
-      "ui": ["./ui/*"],
-      "utils": ["./utils/*"]
-    }
+    "baseUrl": "."
   },
   "exclude": ["node_modules", ".next"],
   "include": ["**/*.ts", "**/*.tsx"]
