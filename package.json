@@ -24,7 +24,6 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@now/node": "1.7.2",
     "@types/classnames": "2.2.10",
     "@types/node": "13.13.14",
     "@types/react": "16.9.43",
@@ -35,8 +34,8 @@
     "eslint-config-xo-typescript": "0.31.0",
     "eslint-plugin-react": "7.20.3",
     "eslint-plugin-react-hooks": "4.0.8",
-    "now": "19.1.2",
     "typescript": "3.9.6",
+    "vercel": "19.1.2",
     "xo": "0.32.1"
   },
   "xo": {

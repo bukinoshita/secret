@@ -19,7 +19,11 @@ import { PageTitle } from 'components/page-title'
 import pkg from '../package.json'
 import { NextPageContext } from 'next'
 
-const Home = ({ host }: any) => {
+export type HomeProps = {
+  host: string
+}
+
+const Home = ({ host }: HomeProps) => {
   const [pwd, setPwd] = useState<string>('')
   const [encrypt] = useEncrypt()
   const [secret, onTypeSecret] = useState<string>('')
@@ -32,11 +36,11 @@ const Home = ({ host }: any) => {
 
     const { iv, cipherText, cipherKey } = await encrypt(secret)
     const {
-      data: { id }
+      data: { id },
     } = await api.post(`${host}/api/create-secret`, {
       iv,
       cipherText,
-      pwd
+      pwd,
     })
 
     const URL = `/s/${id}?cipherKey=${cipherKey}`
@@ -104,8 +108,8 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
-      host
-    }
+      host,
+    },
   }
 }
 
