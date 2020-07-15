@@ -19,7 +19,11 @@ import { PageTitle } from 'components/page-title'
 import pkg from '../package.json'
 import { NextPageContext } from 'next'
 
-const Home = ({ host }: any) => {
+export type HomeProps = {
+  host: string
+}
+
+const Home = ({ host }: HomeProps) => {
   const [pwd, setPwd] = useState<string>('')
   const [encrypt] = useEncrypt()
   const [secret, onTypeSecret] = useState<string>('')

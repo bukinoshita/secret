@@ -1,9 +1,10 @@
-import { NowRequest, NowResponse } from '@now/node'
+import { NextApiRequest, NextApiResponse } from 'next'
+
 import { api } from 'utils/api'
 
 const getSecret = async (
-  request: NowRequest,
-  response: NowResponse
+  request: NextApiRequest,
+  response: NextApiResponse
 ): Promise<void> => {
   const { id, password } = request.query
   const {
@@ -12,7 +13,7 @@ const getSecret = async (
     `${process.env.API_URL}/api/secret/get?id=${id}&password=${password}`
   )
 
-  response.status(201).send({ iv, cipherText })
+  response.status(201).json({ iv, cipherText })
 }
 
 export default getSecret
