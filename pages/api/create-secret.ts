@@ -8,11 +8,11 @@ const createSecret = async (
 ) => {
   const { iv, cipherText, pwd } = request.body
   const {
-    data: { id },
+    data: { id }
   } = await api.post(`${process.env.API_URL}/api/secret/create`, {
     iv,
     cipherText,
-    pwd,
+    pwd
   })
 
   response.status(201).json({ id })

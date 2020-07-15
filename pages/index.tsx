@@ -36,11 +36,11 @@ const Home = ({ host }: HomeProps) => {
 
     const { iv, cipherText, cipherKey } = await encrypt(secret)
     const {
-      data: { id },
+      data: { id }
     } = await api.post(`${host}/api/create-secret`, {
       iv,
       cipherText,
-      pwd,
+      pwd
     })
 
     const URL = `/s/${id}?cipherKey=${cipherKey}`
@@ -108,8 +108,8 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
-      host,
-    },
+      host
+    }
   }
 }
 
