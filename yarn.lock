@@ -3375,12 +3375,7 @@ eslint-config-xo-react@0.23.0:
   resolved "https://registry.yarnpkg.com/eslint-config-xo-react/-/eslint-config-xo-react-0.23.0.tgz#a6e4cfc3e1231cf9291fa19000f559dc53183090"
   integrity sha512-yBNoMF6COjJLRijlWksC1Jws6CGWHMgTfR/PAReCdZUo5cg/ZsyNeZx/fntyU4SbARwW2RvuezMeKle+jI5yoA==
 
-eslint-config-xo-typescript@0.32.0:
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.32.0.tgz#87994155710b7c5a9349bafb7ef794c54eb3c7dc"
-  integrity sha512-GCYR9wXNATh6/yB9s9PvKia7tlv86ZsrN3CYk/qfcTJhFSO41fagBgA8G8H1j0CACC4AHaRpgbTEu4+W0p9hkw==
-
-eslint-config-xo-typescript@^0.35.0:
+eslint-config-xo-typescript@0.35.0, eslint-config-xo-typescript@^0.35.0:
   version "0.35.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.35.0.tgz#4cd8c1208e0f96b80ec8d39dd61930e978e95b59"
   integrity sha512-Pgj9mX0T74Ro8FCvVO1ZjWWcPDW6J42SByG4GMRwMXXZrSwOUY83vj4Ii/+Q+amg2XJwyx0o5/sCprUP/nGM0Q==
