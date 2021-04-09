@@ -1,8 +1,0 @@
-{
-  "scope": "bukinoshita",
-  "build": {
-    "env": {
-      "API_URL": "https://getsecret-service.now.sh"
-    }
-  }
-}
